@@ -22,14 +22,8 @@ function dataCollector() {
 }
 
 async function postFormData() {
-
-  async function postData(url = '', data = {}) {
-    const response = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-    return await response.json()
-  }
-
-  postData('https://js-camp-star-wars-default-rtdb.firebaseio.com/swapi/people.json', await dataCollector())
+  const response = await fetch('https://js-camp-star-wars-default-rtdb.firebaseio.com/swapi/people.json', {
+    method: 'POST',
+    body: JSON.stringify(dataCollector())
+  })
 }
