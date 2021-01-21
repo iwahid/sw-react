@@ -32,7 +32,4 @@ async function postFormData() {
   }
 
   postData('https://js-camp-star-wars-default-rtdb.firebaseio.com/swapi/people.json', await dataCollector())
-    .then((data) => {
-      console.log("Data posted!", data)
-    })
 }
