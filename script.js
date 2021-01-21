@@ -1,11 +1,11 @@
-/*  event interception */
+/*  Event interception. */
 const form = document.getElementById('form')
 form.addEventListener("submit", function formHandler(e) {
   e.preventDefault()
   postFormData()
 })
 
-/* collection data from HTML form */
+/* Collection data from HTML form. */
 function dataCollector() {
   const inputsCollection = [...document.getElementsByClassName('content')]
 
