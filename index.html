@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Form</title>
+
+  <style>
+    .label {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+    }
+    input {
+      width: 200px;
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Adding entity using HTML form</h2>
+
+  <form id="form">
+    <label class="label" for="pname">Name: <input class="content" type="text" id="pname" name="pname"
+        value="Luke Skywalker"><br></label>
+    <br>
+    <label class="label" for="mass">Mass: <input class="content" type="text" id="mass" name="mass"
+        value="77"><br></label>
+    <br>
+    <label class="label" for="skin_color">Scin color: <input class="content" type="text" id="skin-color"
+        name="skin-color" value="fair"><br></label>
+    <br>
+    <label class="label" for="homeworld">Home world: <input class="content" type="text" id="homeworld" name="homeworld"
+        value="1"><br></label>
+    <br>
+    <label class="label" for="height">Height: <input class="content" type="text" id="height" name="height"
+        value="172"><br></label>
+    <br>
+    <label class="label" for="hair_color">Hair color: <input class="content" type="text" id="hair_color"
+        name="hair_color" value="blond"><br></label>
+    <br>
+    <label class="label" for="gender">Gender: <input class="content" type="text" id="gender" name="gender"
+        value="male"><br></label>
+    <br>
+    <label class="label" for="eye_color">Eye color: <input class="content" type="text" id="eye_color" name="eye_color"
+        value="blue"><br></label>
+    <br>
+    <label class="label" for="edited">Edited: <input class="content" type="text" id="edited" name="edited"
+        value="2014-12-20T21:17:56.891Z"><br></label>
+    <br>
+    <label class="label" for="created">Created: <input class="content" type="text" id="created" name="created"
+        value="2014-12-09T13:50:51.644Z"><br></label>
+    <br>
+    <label class="label" for="birth_year">Birth year: <input class="content" type="text" id="birth_year"
+        name="birth_year" value="19BBY"><br></label>
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
