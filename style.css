@@ -1,0 +1,9 @@
+.label {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+input {
+  width: 200px;
+  margin-left: auto;
+}
