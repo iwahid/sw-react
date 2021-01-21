@@ -1,5 +1,5 @@
 /*  event interception */
-let form = document.getElementById('form')
+const form = document.getElementById('form')
 form.addEventListener("submit", function formHandler(e) {
   e.preventDefault()
   postFormData()
@@ -9,7 +9,7 @@ form.addEventListener("submit", function formHandler(e) {
 function dataCollector() {
   const inputsCollection = [...document.getElementsByClassName('content')]
 
-  let dataList = {
+  const dataList = {
     fields: {},
     model: 'resourse.people'
   }
