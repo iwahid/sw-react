@@ -7,16 +7,15 @@ form.addEventListener("submit", function formHandler(e) {
 
 /* Collection data from HTML form. */
 function dataCollector() {
-  const inputsCollection = [...document.getElementsByClassName('form-input')]
+  const formData = new FormData(form)
 
   const dataList = {
     fields: {},
     model: 'resourse.people'
   }
 
-  inputsCollection.forEach((input) => {
-    dataList.fields[input.id] = input.value
-  })
+  /* Fill the object with data from the form. */
+  formData.forEach((value, key) => (dataList.fields[key] = value || "udefined"))
 
   return dataList
 }
