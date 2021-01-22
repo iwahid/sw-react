@@ -7,7 +7,7 @@ form.addEventListener("submit", function formHandler(e) {
 
 /* Collection data from HTML form. */
 function dataCollector() {
-  const inputsCollection = [...document.getElementsByClassName('content')]
+  const inputsCollection = [...document.getElementsByClassName('form-input')]
 
   const dataList = {
     fields: {},
@@ -21,8 +21,8 @@ function dataCollector() {
   return dataList
 }
 
-async function postFormData() {
-  const response = await fetch('https://js-camp-star-wars-default-rtdb.firebaseio.com/swapi/people.json', {
+function postFormData() {
+  fetch('https://js-camp-star-wars-default-rtdb.firebaseio.com/swapi/people.json', {
     method: 'POST',
     body: JSON.stringify(dataCollector())
   })
