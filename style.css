@@ -1,9 +1,10 @@
 .label {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
 }
-input {
-  width: 200px;
-  margin-left: auto;
+
+.form-input {
+    width: 200px;
+    margin-left: auto;
 }
