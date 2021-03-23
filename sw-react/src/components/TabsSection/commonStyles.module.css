@@ -1,0 +1,47 @@
+.panel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 25px 0;
+  font-family: sans-serif;
+}
+
+.tabsContainer {
+  border-bottom: 2px solid var(--main-second-bg-color);
+  text-align: left;
+}
+
+.tabItem{
+  position: relative;
+  display: inline-block;
+  margin-left: 0;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--main-primary-text-color);
+}
+
+.tabItem::after {
+  position: absolute;
+  content: '';
+  bottom: -2px;
+  left: 0;
+  background-color: var(--main-accent-color);
+  height: 2px;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.selected {
+  position: relative;
+}
+.selected::after {
+  opacity: 1;
+}
+
+.tabItem:hover::after,
+.selected::after {
+ opacity: 1;
+ transition: opacity .2s linear;
+
+}

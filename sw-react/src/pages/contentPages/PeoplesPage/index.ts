@@ -1,0 +1,2 @@
+
+export { PeoplesPage } from './PeoplesPage'; 

@@ -1,0 +1,2 @@
+export { PeopleMainContent } from './PeopleMainContent'; 
+ 

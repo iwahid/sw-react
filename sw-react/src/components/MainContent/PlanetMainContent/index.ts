@@ -1,0 +1,2 @@
+export { PlanetMainContent } from './PlanetMainContent'; 
+ 

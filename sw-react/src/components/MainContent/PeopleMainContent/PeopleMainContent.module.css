@@ -1,0 +1,83 @@
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  background-color: #222426;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 70%;
+  height: 100%;
+  padding: 50px 0;/* 
+  border: 1px solid #4d4e4e; */
+/*   background-color: #ccc; */
+} 
+
+.characterInfo {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  min-width: 150px;
+  text-align: left;
+}
+
+.characterName, .characterBirth, .characterGender, .characterHeight, 
+.characterMass, .characterEye, .characterHair {
+  margin: 5px 0;
+  color: var(--main-primary-text-color);
+  font-weight: 200;
+  font-size: 24px;
+}
+
+.characterInfo p {
+  padding: 0  0 10px 0;
+}
+
+.characterInfo .description {
+  color: var(--main-secondary-text-color);
+  font-size: 14px;
+}
+
+.characterName .value {
+  color: var(--main-accent-color);
+  font-size: 32px;
+}
+
+.characterPicture {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  /* For tests */
+  /* border: 1px solid #4d4e4e; */
+}
+
+.picture {
+  position: relative;
+  height: 650px;
+}
+
+.picture img {
+  height: 100%;
+  /* For tests */
+  /* border: 1px solid red; */
+}
+
+.shadowPanel {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  box-shadow:  inset 0 -217px 45px -65px rgba(34, 36, 38, 1);
+}

@@ -1,0 +1,2 @@
+export { FilmMainContent } from './FilmMainContent'; 
+ 

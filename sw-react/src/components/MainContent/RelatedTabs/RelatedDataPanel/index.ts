@@ -1,0 +1,2 @@
+export { RelatedDataPanel } from './RelatedDataPanel'; 
+ 

@@ -1,0 +1,87 @@
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  background-color: #222426;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  height: 75vh;
+  padding: 0 50px;
+  box-shadow:  inset 0 -210px 48px 8px rgba(34, 36, 38, 1);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+} 
+
+.planetInfo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: stretch;
+  align-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.planetInfoItem {
+  width: auto;
+  position: relative;
+  margin: 0;
+  padding: 5px 10px;
+  color:  white;
+  font-weight: 200;
+
+}
+
+
+.planetInfoItem:not(:first-child):before {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(126, 130, 134, 0.7);
+  margin: 5px 0;
+}
+
+.planetInfoItem:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(126, 130, 134, 0.7);
+  margin: 5px 0;
+}
+
+.planetInfoItem p {
+  padding: 0  0 10px 0;
+}
+
+.planetInfoItem .description {
+  color: grey;
+  font-size: 14px;
+}
+
+.planetInfoItem .value {
+  color: aliceblue;
+  font-size: 24px;
+}
+
+.planetName .value {
+  color: var(--main-accent-color);
+  font-size: 32px;
+  padding-bottom: 26px;
+}
