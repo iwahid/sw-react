@@ -7,5 +7,5 @@ export interface VehicleModel {
   /** Class of vehicle */
   vehicleClass: string;
   /** Id of the document */
-  docId: string;
+  docId: number;
 }

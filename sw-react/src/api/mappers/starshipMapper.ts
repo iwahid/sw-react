@@ -1,7 +1,7 @@
 import { StarshipModel } from "../../models/starshipModel";
 import { StarshipDTO } from "../dtos/starshipDTO";
 
-export function mapStarshipDtoToStarshipMode(starshipDto: StarshipDTO, docId: string): StarshipModel {
+export function mapStarshipDtoToStarshipMode(starshipDto: StarshipDTO, docId: number): StarshipModel {
   return {
     MGLT: starshipDto.MGLT,
     hyperdriveRating: starshipDto.hyperdrive_rating,

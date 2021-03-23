@@ -3,7 +3,7 @@ import { ExtendedFilmModel } from '../../../models/extendedFilmModel';
 
 /** Result list interface */
 export interface IResultList {
-  id: string,
+  id: number,
   title: string[],
   subTitle?: string[],
   image?: string

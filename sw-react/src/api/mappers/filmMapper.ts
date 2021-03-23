@@ -1,7 +1,7 @@
 import { FilmDTO } from "../dtos/filmDTO";
 import { FilmModel } from "../../models/filmModel";
 
-export function mapFilmDtoToFilmModel(filmDto: FilmDTO, docId: string): FilmModel {
+export function mapFilmDtoToFilmModel(filmDto: FilmDTO, docId: number): FilmModel {
   return {
     characters: filmDto.characters,
     created: filmDto.created,

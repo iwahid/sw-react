@@ -37,7 +37,7 @@ export const FilmMainContent: React.FC = () => {
 
   /* FIXME: протипизировать стейт */
   /* Получаю нужный мне фильм из всего списка загруженных фильмов в сторе */
-  const film: FilmModel = useSelector((state: any) => state.films.find((findFilm: FilmModel) => findFilm.docId == urlParams.id))
+  const film: FilmModel = useSelector((state: any) => state.films.find((findFilm: FilmModel) => findFilm.docId === Number(urlParams.id)))
 
   /* Обновляю связанные данные для текущего выбранного фильма, каждый раз при выборе нового фильма в сайдбаре  */
   useEffect(() => {

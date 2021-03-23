@@ -29,5 +29,5 @@ export interface FilmModel {
   /** Ids of vehicles that appeared in film */
   vehicles: number[];
   /** Id of document in database */
-  docId: string;
+  docId: number;
 }

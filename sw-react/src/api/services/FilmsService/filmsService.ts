@@ -56,7 +56,7 @@ export const arrayСhunking = (fullListArray: number[]) => {
 export const loadExtraDataToCurrentFilm = <T, F>(
   idList: number[],
   link: string,
-  mapperFunc: (fields: F, pk: string) => T,
+  mapperFunc: (fields: F, pk: number) => T,
   actionCreate: (array: T[]) => { type: string, payload: T[] })
   : void => {
 

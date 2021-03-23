@@ -1,7 +1,7 @@
 import { SpecieModel } from "../../models/specieModel";
 import { SpecieDTO } from "../dtos/specieDTO";
 
-export function mapSpecieDtoToSpecieModel(specieDto: SpecieDTO, docId: string): SpecieModel {
+export function mapSpecieDtoToSpecieModel(specieDto: SpecieDTO, docId: number): SpecieModel {
   return {
     averageHeight: specieDto.average_height,
     averageLifespan: specieDto.average_lifespan,

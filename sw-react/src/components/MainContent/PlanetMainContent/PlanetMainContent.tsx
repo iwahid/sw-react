@@ -11,15 +11,15 @@ interface ParamTypes {
 }
 
 export const PlanetMainContent: React.FC = () => {
-  
+
   const urlParams: ParamTypes = useParams();
 
   /* Получаю нужный мне фильм из всего списка загруженных фильмов в сторе */
-  const planet: PlanetModel = useSelector((state: any) => state.planets.find((findPlanet: PlanetModel) => findPlanet.docId == urlParams.id))
+  const planet: PlanetModel = useSelector((state: any) => state.planets.find((findPlanet: PlanetModel) => findPlanet.docId === Number(urlParams.id)))
 
   /* FIXME: проблемы с тем, что не видно планету при обновлении страницы, поэтому такое сложное условие. Заменить проверку */
   const backgroundImageStyles = {
-    backgroundImage: `url('${planet ? planet.image ? planet.image : imageNotFound : ''}') `,
+    backgroundImage: `url('${planet ? planet.image ? planet.image : imageNotFound : ''}')`,
     backgroundSize: `${planet ? planet.image ? 'cover' : "contain" : ''}`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',

@@ -1,8 +1,6 @@
 /* FIXME: добавить типизацию для начального стейта */
 import { FilmModel } from '../../models/filmModel';
 
-/* const initialState: ExtendedFilmModel[] = [] */
-
 const initialState: FilmModel = {
   characters: [],
   created: '',
@@ -17,7 +15,7 @@ const initialState: FilmModel = {
   starships: [],
   title: '',
   vehicles: [],
-  docId: '',
+  docId: 0,
 }
 
 /* FIXME: типизировать экшены */

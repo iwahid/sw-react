@@ -1,7 +1,7 @@
 import { CharacterModel } from "../../models/characterModel";
 import { CharacterDTO } from "../dtos/characterDTO";
 
-export function mapCharacterDtoToCharacterModel(character: CharacterDTO, docId: string): CharacterModel {
+export function mapCharacterDtoToCharacterModel(character: CharacterDTO, docId: number): CharacterModel {
   return {
     birthYear: character.birth_year,
     created: character.created,

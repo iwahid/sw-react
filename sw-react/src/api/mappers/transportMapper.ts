@@ -1,7 +1,7 @@
 import { TransportModel } from '../../models/transportModel';
 import { TransportDTO } from '../dtos/transportDTO';
 
-export function mapTransportDtoToTransportModel(transportDTO: TransportDTO, docId: string): TransportModel {
+export function mapTransportDtoToTransportModel(transportDTO: TransportDTO, docId: number): TransportModel {
   return {
     cargoCapacity: transportDTO.cargo_capacity,
     consumables: transportDTO.consumables,

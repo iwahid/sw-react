@@ -27,5 +27,5 @@ export interface PlanetModel {
   /** Terrain of planet */
   terrain: string;
   /** Id of the document */
-  docId: string;
+  docId: number;
 }

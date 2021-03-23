@@ -29,5 +29,5 @@ export interface SpecieModel {
   /** Colors of skin that might be. Comma separated */
   skinColors: string;
   /** Id of the document */
-  docId: string;
+  docId: number;
 }

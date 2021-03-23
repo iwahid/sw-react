@@ -18,7 +18,7 @@ export const PeopleMainContent: React.FC = () => {
 
   /* Получаю нужную мне планету из всего списка загруженных в стор */
   const character: CharacterModel = useSelector((state: any) => 
-  state.peoples.find((findCharacter: CharacterModel) => findCharacter.docId == urlParams.id))
+  state.peoples.find((findCharacter: CharacterModel) => findCharacter.docId === Number(urlParams.id)))
 
   return (
     (urlParams.id && character)

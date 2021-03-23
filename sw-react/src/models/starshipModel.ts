@@ -11,5 +11,5 @@ export interface StarshipModel {
   /** Class of starship */
   starshipClass: string;
   /** Id of the document */
-  docId: string;
+  docId: number;
 }

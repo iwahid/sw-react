@@ -27,5 +27,5 @@ export interface CharacterModel {
   /** Color of skin */
   skinColor: string;
   /** Id of the document */
-  docId: string;
+  docId: number;
 }

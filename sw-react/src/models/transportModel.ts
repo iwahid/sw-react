@@ -29,5 +29,5 @@ export interface TransportModel {
  /** Passengers on board transport in sinful souls */
   passengers: string,
   /** Id of the document */
-  docId: string;
+  docId: number;
 }
