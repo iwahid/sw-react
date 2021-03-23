@@ -1,3 +1,6 @@
+/* NOTE: Disabled eslint in this file as it was asking for values to be typed (JS, not TS) */
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { Component } from "react";
 import styles from './commonStyles.module.css'
 
