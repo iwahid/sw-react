@@ -2,7 +2,7 @@ import { PlanetModel } from '../../models/planetModel';
 
 const initialState: PlanetModel[] = []
 
-export const planetsReducer = (state = initialState, action: any) => {
+export const planetsReducer = (state = initialState, action: any): typeof initialState => {
   switch (action.type) {
     case 'planets/loadAllPlanets': {
       return action.payload

@@ -19,7 +19,7 @@ const initialState: FilmModel = {
 }
 
 /* FIXME: типизировать экшены */
-export const currentFilmReducer = (state = initialState, action: any) => {
+export const currentFilmReducer = (state = initialState, action: any): typeof initialState => {
   switch (action.type) {
     case 'currentFilm/setCurrentFilm': {
       return {...action.payload} 

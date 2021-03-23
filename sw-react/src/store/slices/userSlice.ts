@@ -5,7 +5,7 @@ const initialState: UserModel = {
   password: ''
 }
 
-export const userReducer = (state = initialState, action: any):any => {
+export const userReducer = (state = initialState, action: any): typeof initialState => {
   switch (action.type) {
     /* TODO: Add registration */
     case 'user/registered': {

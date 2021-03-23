@@ -18,6 +18,7 @@ import { VehicleModel } from '../../../models/vehicleModel';
 
 const { dispatch } = store
 
+/* FIXME: типизация возвращаемого значения */
 /* Получение всех фильмов */
 export const loadAllFilms = () =>
   db.firestore().collection("films")
@@ -39,7 +40,7 @@ export const loadAllFilms = () =>
     })
 
 /* Функция чанкования массива, для обхода ограничения от firebase  */
-export const arrayСhunking = (fullListArray: number[]) => {
+export const arrayСhunking = (fullListArray: number[]): number[][] => {
   /* NOTE: ограничение от firebase */
   const chankSize = 10;
   const chanksArray: number[][] = [];
@@ -109,7 +110,7 @@ const actionVehicles = (vehicles: VehicleModel[]) => ({
 /* Обновляет все связанные данные для текущего выбранного фильма */
 /* FIXME: зачем мне здесь явно указывать типы данных при вызове функции */
 /* FIXME: почему я могу вызвать эту функцию без явного указания используемых типов? Хотя они описаны при её объявлении */
-export const updateCurrentFilm = (film: FilmModel) => {
+export const updateCurrentFilm = (film: FilmModel):void => {
   loadExtraDataToCurrentFilm(film.planets, 'planets', mapPlanetDtoToPlanetModel, actionPlanets)
   loadExtraDataToCurrentFilm(film.characters, 'people', mapCharacterDtoToCharacterModel, actionCharacters)
   loadExtraDataToCurrentFilm(film.species, 'species', mapSpecieDtoToSpecieModel, actionSpecies)

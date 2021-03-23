@@ -17,8 +17,8 @@ export const PeopleMainContent: React.FC = () => {
   const urlParams: ParamTypes = useParams();
 
   /* Получаю нужную мне планету из всего списка загруженных в стор */
-  const character: CharacterModel = useSelector((state: any) => 
-  state.peoples.find((findCharacter: CharacterModel) => findCharacter.docId === Number(urlParams.id)))
+  const character: CharacterModel = useSelector((state: any) =>
+    state.peoples.find((findCharacter: CharacterModel) => findCharacter.docId === Number(urlParams.id)))
 
   return (
     (urlParams.id && character)
@@ -66,10 +66,7 @@ export const PeopleMainContent: React.FC = () => {
               <div className={styles.picture}>
                 <div className={styles.shadowPanel} />
                 {
-                  character ?
-                    <img alt={character.name} src={character.image ? character.image : imageNotFound} />
-                    :
-                    null
+                  character && <img alt={character.name} src={character.image ? character.image : imageNotFound} />
                 }
               </div>
             </div>
