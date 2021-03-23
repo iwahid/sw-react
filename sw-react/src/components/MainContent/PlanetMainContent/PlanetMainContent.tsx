@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import styles from './PlanetMainContent.module.css'
 import { useParams } from 'react-router-dom'
-import "../../TabsSection/commonStyles.module.css"
 import { useSelector } from 'react-redux';
 import { PlanetModel } from '../../../models/planetModel';
+import styles from './PlanetMainContent.module.css'
 import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
 
 /** ID parameter for the selected planet */

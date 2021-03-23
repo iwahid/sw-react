@@ -11,11 +11,10 @@
   text-align: left;
 }
 
-.tabItem{
+.tabItem {
   position: relative;
   display: inline-block;
   margin-left: 0;
-  padding: 10px;
   cursor: pointer;
   color: var(--main-primary-text-color);
 }
@@ -35,13 +34,26 @@
 .selected {
   position: relative;
 }
+
 .selected::after {
   opacity: 1;
 }
 
-.tabItem:hover::after,
-.selected::after {
- opacity: 1;
- transition: opacity .2s linear;
+.tabItem:hover::after, .selected::after {
+  opacity: 1;
+  transition: opacity .2s linear;
+}
 
+.tabButton {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+/* NOTE: I not only disabled interactivity when focusing on an element, but redefined it so that the user would see it */
+.tabButton:focus {
+  outline: none;
 }

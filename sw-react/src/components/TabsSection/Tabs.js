@@ -17,12 +17,8 @@ export class Tabs extends Component {
           {this.props.children.map((elem, index) => {
             const style = index === this.state.selected ? styles.selected : "";
             return (
-              <li
-                key={index}
-                className={`${styles.tabItem} ${style}`}
-                onClick={() => this.handleChange(index)}
-              >
-                {elem.props.title}
+              <li key={elem.props.title} className={`${styles.tabItem} ${style}`}>
+                <button className={styles.tabButton} onClick={() => this.handleChange(index)} >{elem.props.title}</button>
               </li>
             );
           })}

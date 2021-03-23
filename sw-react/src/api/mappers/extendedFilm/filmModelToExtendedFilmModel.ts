@@ -14,21 +14,19 @@ export const mapFilmModelToExtendedFilmModel = (
   species?: SpecieModel[],
   starships?: StarshipModel[],
   vehicles?: VehicleModel[],
-): ExtendedFilmModel => {
-  return {
-    characters: characters ? characters : [],
+): ExtendedFilmModel => ({
+    characters: characters || [],
     created: film.created,
     director: film.director,
     docId: film.docId,
     edited: film.edited,
     episodeId: film.episodeId,
     openingCrawl: film.openingCrawl,
-    planets: planets ? planets : [],
+    planets: planets || [],
     producer: film.producer,
     releaseDate: film.releaseDate,
-    species: species ? species : [],
-    starships: starships ? starships : [],
+    species: species || [],
+    starships: starships || [],
     title: film.title,
-    vehicles: vehicles ? vehicles : [],
-  }
-}
+    vehicles: vehicles || [],
+  })

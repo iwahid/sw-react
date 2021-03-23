@@ -19,23 +19,24 @@ import { VehicleModel } from '../../../models/vehicleModel';
 const { dispatch } = store
 
 /* Получение всех фильмов */
-export const loadAllFilms = () => db.firestore().collection("films")
-  .onSnapshot((querySnapshot) => {
+export const loadAllFilms = () =>
+  db.firestore().collection("films")
+    .onSnapshot((querySnapshot) => {
 
-    const films: FilmModel[] = []
+      const films: FilmModel[] = []
 
-    querySnapshot.forEach((doc) => {
-      const mapped = mapFilmDtoToFilmModel(doc.data().fields, doc.data().pk)
-      films.push(mapped);
-    });
+      querySnapshot.forEach((doc) => {
+        const mapped = mapFilmDtoToFilmModel(doc.data().fields, doc.data().pk)
+        films.push(mapped);
+      });
 
-    dispatch({
-      type: 'films/loadAllFilms',
-      payload: films
+      dispatch({
+        type: 'films/loadAllFilms',
+        payload: films
+      })
+
+      console.log("Getting planets list: ", films);
     })
-
-    console.log("Getting planets list: ", films);
-  })
 
 /* Функция чанкования массива, для обхода ограничения от firebase  */
 export const arrayСhunking = (fullListArray: number[]) => {

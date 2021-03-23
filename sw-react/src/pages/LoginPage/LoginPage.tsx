@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 /* import styles from './LoginPage.module.css' */
 import { Redirect } from 'react-router-dom'
-import { userLogin } from '../../api/services/userService/userService';
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
-
-/* FIXME: типизировать страницу */
+import { userLogin } from '../../api/services/userService/userService';
 
 export const LoginPage: React.FC = () => {
   const [userCredentials, setUserCredentials] = useState({ email: '', password: '' })
@@ -41,8 +39,8 @@ export const LoginPage: React.FC = () => {
         <input
           id="email"
           name="email"
-          type="email"
           onChange={formik.handleChange}
+          type="email"
           value={formik.values.email}
         />
         <button type="submit">Submit</button>
@@ -54,11 +52,11 @@ export const LoginPage: React.FC = () => {
     <div>
       <form onSubmit={handleFormSubmit}>
         <label>Email:
-          <input type="text" placeholder='qwerty@mail.ru' onChange={(e) => setUserCredentials(prevState => ({ ...prevState, email: e.target.value }))} />
+          <input onChange={(e) => setUserCredentials(prevState => ({ ...prevState, email: e.target.value }))} placeholder='qwerty@mail.ru' type="text" />
         </label>
 
         <label>Password:
-          <input type="text" placeholder='password123!' onChange={(e) => setUserCredentials(prevState => ({ ...prevState, password: e.target.value }))} />
+          <input onChange={(e) => setUserCredentials(prevState => ({ ...prevState, password: e.target.value }))} placeholder='password123!' type="text" />
         </label>
 
         <button type="submit">Login</button>
@@ -70,7 +68,7 @@ export const LoginPage: React.FC = () => {
       Name is: {userCredentials.email}
       Password is: {userCredentials.password}
 
-      <SignupForm></SignupForm>
+      <SignupForm />
     </div>
   );
 }

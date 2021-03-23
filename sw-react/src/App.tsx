@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { NavigationBar } from './components/NavigationBar';
-/* FIXME: пересмотреть */
-import { loginIn } from './features/people/test';
 import { FilmsPage } from './pages/contentPages/FilmsPage';
 import { PeoplesPage } from './pages/contentPages/PeoplesPage';
 import { PlanetsPage } from './pages/contentPages/PlanetsPage';
