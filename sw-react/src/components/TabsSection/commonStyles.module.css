@@ -54,6 +54,7 @@
 }
 
 /* NOTE: I not only disabled interactivity when focusing on an element, but redefined it so that the user would see it */
+
 .tabButton:focus {
   outline: none;
 }

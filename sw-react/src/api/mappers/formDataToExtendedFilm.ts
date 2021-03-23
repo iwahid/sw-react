@@ -21,5 +21,5 @@ export const mapFormDataToExtendedFilm = (formFilm: FilmFormProperties, film?: E
 }
  */
 
- /* FIXME: дописать мапер, когда буду работать с фильмом */
+ /* FIXME: Add a mapper when work with a films */
 export const temp:[] =[]

@@ -1,9 +1,7 @@
-import React from 'react';/* 
-import styles from './FilmMainContent.module.css' */
+import React from 'react';
 import { Link } from 'react-router-dom'
-import styles from './RelatedDatapanel.module.css'
 import { IResultList } from '../../FilmMainContent/dataListService';
-
+import styles from './RelatedDatapanel.module.css'
 import imageBGPlaceHolder from '../../../../assets/imagePlaceHolder/SW-ImageNotFound_transparent.png'
 
 /** Props interface */
@@ -17,7 +15,7 @@ export const RelatedDataPanel: React.FC<IProps> = props => (
     {props.contentList.map((contentItem) =>
       <Link key={contentItem.id} className={styles.item} to={`/${props.urlPath}/${contentItem.id}`} >
 
-        {/* Аватар в виде фонового изображения */}
+        {/* An entity avatar as a background image */}
         <div
           className={styles.itemPicture}
           style={{
@@ -31,7 +29,7 @@ export const RelatedDataPanel: React.FC<IProps> = props => (
 
         <div className={styles.itemContainer}>
           <div className={styles.itemContent}>
-            {/* NOTE: я же возвращаю кортеж, всегда нужно работать с индексами [0] и [1] */}
+            {/* NOTE: I return a tuple, you should always work with indices [0] and [1] */}
             <div className={styles.itemTitle}>
               <span className={styles.titleValue}>{contentItem.title[1]}</span>
             </div>

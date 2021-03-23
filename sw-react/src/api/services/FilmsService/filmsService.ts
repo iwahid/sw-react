@@ -18,8 +18,8 @@ import { VehicleModel } from '../../../models/vehicleModel';
 
 const { dispatch } = store
 
-/* FIXME: типизация возвращаемого значения */
-/* Получение всех фильмов */
+/* FIXME: Add typing for return values */
+/** The function of getting all movies in the application */
 export const loadAllFilms = () =>
   db.firestore().collection("films")
     .onSnapshot((querySnapshot) => {
@@ -39,9 +39,9 @@ export const loadAllFilms = () =>
       console.log("Getting planets list: ", films);
     })
 
-/* Функция чанкования массива, для обхода ограничения от firebase  */
+/** Chunk array function to bypass firebase limitation  */
 export const arrayСhunking = (fullListArray: number[]): number[][] => {
-  /* NOTE: ограничение от firebase */
+  /* NOTE: Firebase limitation */
   const chankSize = 10;
   const chanksArray: number[][] = [];
 
@@ -51,7 +51,6 @@ export const arrayСhunking = (fullListArray: number[]): number[][] => {
 
   return [...chanksArray]
 }
-
 
 
 export const loadExtraDataToCurrentFilm = <T, F>(
@@ -64,7 +63,8 @@ export const loadExtraDataToCurrentFilm = <T, F>(
   const result: T[] = []
   const chanksArray = arrayСhunking(idList)
 
-  /* NOTE: Получаю связанные данные просто через get, а не подпиской. Поскольку их актуальность не критична */
+  /* NOTE: I get related data simply through the get method, not by subscription. 
+  Since their relevance is not critical */
   for (let i = 0; i < chanksArray.length; i++) {
     db.firestore().collection(link).where('pk', "in", chanksArray[i])
       .get()
@@ -107,10 +107,10 @@ const actionVehicles = (vehicles: VehicleModel[]) => ({
   payload: vehicles
 })
 
-/* Обновляет все связанные данные для текущего выбранного фильма */
-/* FIXME: зачем мне здесь явно указывать типы данных при вызове функции */
-/* FIXME: почему я могу вызвать эту функцию без явного указания используемых типов? Хотя они описаны при её объявлении */
-export const updateCurrentFilm = (film: FilmModel):void => {
+/* NOTE: Updates the movie piece by piece. to be able to easily reconfigure the application:
+ load individual pieces of data when opening individual tabs */
+/** Refreshes all related data for the selected movie */
+export const updateCurrentFilm = (film: FilmModel): void => {
   loadExtraDataToCurrentFilm(film.planets, 'planets', mapPlanetDtoToPlanetModel, actionPlanets)
   loadExtraDataToCurrentFilm(film.characters, 'people', mapCharacterDtoToCharacterModel, actionCharacters)
   loadExtraDataToCurrentFilm(film.species, 'species', mapSpecieDtoToSpecieModel, actionSpecies)

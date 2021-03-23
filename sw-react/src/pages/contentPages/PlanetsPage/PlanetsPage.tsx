@@ -7,8 +7,6 @@ import { PlanetModel } from '../../../models/planetModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
 import styles from '../commonStyles.module.css';
 
-
-
 export const PlanetsPage: React.FC = () => {
 
   const currentRoute = 'planets'
@@ -24,7 +22,6 @@ export const PlanetsPage: React.FC = () => {
 
   const linksList: IAsideLink[] = useSelector(selector)
 
-  /* FIXME: удалить MainContent компонент */
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>

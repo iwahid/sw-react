@@ -6,7 +6,6 @@ import {SpecieModel} from "../../../models/specieModel";
 import {StarshipModel} from "../../../models/starshipModel";
 import {VehicleModel} from "../../../models/vehicleModel";
 
-
 export const mapFilmModelToExtendedFilmModel = (
   film: FilmModel,
   characters?: CharacterModel[],

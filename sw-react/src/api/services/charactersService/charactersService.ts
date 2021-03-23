@@ -5,6 +5,8 @@ import { store } from '../../../store/store';
 
 const { dispatch } = store
 
+/* FIXME: Add typing for return values */
+
 export const loadAllCharacters = () => (
   db.firestore().collection("people")
     .onSnapshot((querySnapshot) => {

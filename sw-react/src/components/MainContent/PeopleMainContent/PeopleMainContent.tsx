@@ -12,11 +12,11 @@ interface ParamTypes {
 }
 
 export const PeopleMainContent: React.FC = () => {
-  /* NOTE: получаю параметры из url, если в параметрах есть id - вытягиваю из стора данные по персонажу и отображаю их, 
-  если нет - показываю заглушку */
+  /* NOTE: I get parameters from the url, if there is an id in the parameters, I pull the character data from the store and display it,
+   if not, show the stub */
   const urlParams: ParamTypes = useParams();
 
-  /* Получаю нужную мне планету из всего списка загруженных в стор */
+  /* Getting the planet I need from the entire list loaded into the store */
   const character: CharacterModel = useSelector((state: any) =>
     state.peoples.find((findCharacter: CharacterModel) => findCharacter.docId === Number(urlParams.id)))
 

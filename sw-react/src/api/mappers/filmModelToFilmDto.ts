@@ -1,7 +1,6 @@
 import { FilmModel } from "../../models/filmModel";
 import { FilmDTO } from "../dtos/filmDTO";
 
-
 export function mapFilmModelToFilmDto(film: FilmModel): FilmDTO {
   return {
     characters: film.characters,

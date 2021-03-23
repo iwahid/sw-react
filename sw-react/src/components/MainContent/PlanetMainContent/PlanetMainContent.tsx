@@ -14,10 +14,10 @@ export const PlanetMainContent: React.FC = () => {
 
   const urlParams: ParamTypes = useParams();
 
-  /* Получаю нужный мне фильм из всего списка загруженных фильмов в сторе */
+  /* I get the planet I need from the entire list of loaded planets in the store */
   const planet: PlanetModel = useSelector((state: any) => state.planets.find((findPlanet: PlanetModel) => findPlanet.docId === Number(urlParams.id)))
 
-  /* FIXME: проблемы с тем, что не видно планету при обновлении страницы, поэтому такое сложное условие. Заменить проверку */
+  /* FIXME: An unnecessarily complex condition for checking the availability of a film */
   const backgroundImageStyles = {
     backgroundImage: `url('${planet ? planet.image ? planet.image : imageNotFound : ''}')`,
     backgroundSize: `${planet ? planet.image ? 'cover' : "contain" : ''}`,

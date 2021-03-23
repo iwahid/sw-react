@@ -1,4 +1,4 @@
-/* Получение списка с нужными данными по каждой из категорий */
+/** Getting a list with the necessary data in a certain format, for each of the categories */
 import { ExtendedFilmModel } from '../../../models/extendedFilmModel';
 
 /** Result list interface */

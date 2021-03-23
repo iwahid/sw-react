@@ -5,6 +5,7 @@ import styles from './NavigationBar.module.css'
 import { userLogout } from '../../api/services/userService/userService';
 import logo from "../../assets/imagePlaceHolder/SW-logo_large.png"
 
+
 export const NavigationBar: React.FC = () => {
 
   const currentUserEmail = useSelector((state: any) => state.user.email)

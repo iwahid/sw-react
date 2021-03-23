@@ -6,6 +6,8 @@ import { mapPlanetDtoToPlanetModel } from '../../mappers/planetMapper';
 
 const { dispatch } = store
 
+/* FIXME: Add typing for return values */
+
 export const loadAllPlanet = () => (
   db.firestore().collection("planets")
     .onSnapshot((querySnapshot) => {

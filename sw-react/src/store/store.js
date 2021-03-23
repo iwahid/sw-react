@@ -6,6 +6,7 @@ import { peoplesReducer } from './slices/peopleSlice'
 import { planetsReducer } from './slices/planetSlice';
 import { userReducer } from './slices/userSlice';
 
+/* FIXME: Add typing for state */
 export const store = configureStore({
   reducer: {
     peoples: peoplesReducer,

@@ -1,7 +1,6 @@
 import {ExtendedFilmModel} from "../../../models/extendedFilmModel";
 import {FilmModel} from "../../../models/filmModel";
 
-
 export const mapExtendedFilmToFilmModel = (film: ExtendedFilmModel): FilmModel => ({
     docId: film.docId,
     vehicles: film.vehicles.map(vehicle => Number(vehicle.docId)),

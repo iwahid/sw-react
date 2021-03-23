@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-/* import styles from './LoginPage.module.css' */
 import { Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import { userLogin } from '../../api/services/userService/userService';
+
+
+/* NOTE: The skeleton of the page, with minimal functionality and style. 
+Will be completely redesigned in the future */
 
 export const LoginPage: React.FC = () => {
   const [userCredentials, setUserCredentials] = useState({ email: '', password: '' })
 
   const currentUser = useSelector((state: any) => state.user)
 
-  /* FIXME: протипизировать события */
+  /* FIXME: Type events */
   const handleFormSubmit = (event: any) => {
     event.preventDefault()
     userLogin(userCredentials)
@@ -32,7 +35,7 @@ export const LoginPage: React.FC = () => {
         alert(JSON.stringify(values, null, 2));
       },
     });
-    
+
     return (
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="email">Email Address</label>
@@ -47,7 +50,7 @@ export const LoginPage: React.FC = () => {
       </form>
     );
   };
-  
+
   return (
     <div>
       <form onSubmit={handleFormSubmit}>

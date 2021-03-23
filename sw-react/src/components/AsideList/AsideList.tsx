@@ -11,19 +11,19 @@ interface Props {
 
 export const AsideList: React.FC<Props> = props => {
 
-  /* Список ссылок для навигации */
+  /** List of navigation links */
   const navList = (
     <ul className={styles.nav}>
       {props.linksList.map((link) => (
-          <li key={link.id}>
-            <NavLink
-              activeClassName={styles.selected}
-              className={`${styles.linkItem} ${styles.linkTitle}`}
-              to={`/${props.currentRoute}/${link.id}`} >
-              {link.title}
-            </NavLink>
-          </li>
-        ))}
+        <li key={link.id}>
+          <NavLink
+            activeClassName={styles.selected}
+            className={`${styles.linkItem} ${styles.linkTitle}`}
+            to={`/${props.currentRoute}/${link.id}`} >
+            {link.title}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   )
 

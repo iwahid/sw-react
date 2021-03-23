@@ -13,6 +13,7 @@ import { RelatedDataPanel } from '../RelatedTabs/RelatedDataPanel';
 import * as dataListService from './dataListService'
 import "../../TabsSection/commonStyles.module.css"
 
+/* NOTE: The section on the movies page showing the main information about the selected movie is not yet complete */
 /* NOTE: Я не обновляю фильм целиком (не заменяю его связанные данные сразу), а делаю это уже на странице просмотра фильма только потому, что это по условию задачи. Я должен загражать как можно меньше данных. И загружать их только тогда, когда это явно потребуется пользователю. 
 Нет смысла грузить и обновлять данные для всех фильмов сразу, когда пользователь может посмотреть их только для одного или двух.
  - Сам фильм загружается каждый раз заново, что позволяет получать получать всегда актуальную информацию о нём.
@@ -26,7 +27,7 @@ import "../../TabsSection/commonStyles.module.css"
   Каждый из запросов обновляет объект с текущим выбранным фильмом и тем самым (возвращая новый изменённый объект фильма в редьюсере)
   тригерит ререндер компонента  */
 
-/** ID parameter for the selected movie */
+/** ID parameter for the selected film */
 interface ParamTypes {
   id?: string
 }
@@ -35,11 +36,10 @@ export const FilmMainContent: React.FC = () => {
 
   const urlParams: ParamTypes = useParams();
 
-  /* FIXME: протипизировать стейт */
-  /* Получаю нужный мне фильм из всего списка загруженных фильмов в сторе */
+  /* Getting the film I need from the entire list of downloaded films in the store */
   const film: FilmModel = useSelector((state: any) => state.films.find((findFilm: FilmModel) => findFilm.docId === Number(urlParams.id)))
 
-  /* Обновляю связанные данные для текущего выбранного фильма, каждый раз при выборе нового фильма в сайдбаре  */
+  /* Update related data for the currently selected movie every time a new movie is selected in the sidebar */
   useEffect(() => {
     store.dispatch({
       type: 'currentFilm/setCurrentFilm',
@@ -62,9 +62,9 @@ export const FilmMainContent: React.FC = () => {
             <div className={styles.content}>
               <div className={styles.poster} />
               <div className={styles.filmInformation}>
-                {/* FIXME: семантика */}
+                {/* FIXME: Check for correct semantics */}
                 <h1 className={styles.filmTitle}>{film && film.title}</h1>
-                {/* TODO: изменить выводу информации о фильме */}
+                {/* TODO: Change the output format of movie information */}
                 <ul className={styles.informationList}>
                   <li className={styles.informationListItem}>
                     <span className={styles.informationListTitle}>Year:</span>
@@ -79,13 +79,13 @@ export const FilmMainContent: React.FC = () => {
                     <span className={styles.informationListContent}>{film ? film.episodeId : ''}</span>
                   </li>
                 </ul>
-                {/* FIXME: опциональная кнопка для редактирования фильма. Зависит от авторизации */}
+                {/* FIXME: Modify the Option Button for movie editing. Depends on authorization */}
                 <button className={styles.editButton}>Edit</button>
               </div>
             </div>
           </div>
 
-          {/* TODO: вынести табы в отдельный компонент */}
+          {/* TODO: Move tabs into a separate component */}
           <div className={styles.red}>
             <Tabs>
               <Panel title="Characters" >
@@ -102,7 +102,7 @@ export const FilmMainContent: React.FC = () => {
                 }
               </Panel>
 
-              {/* NOTE: Сущности из следующих 3 табов будут перенаправлять на 404 страницу, поскольку для них не реализованы страницы для подробного просмотра  */}
+              {/* NOTE: Entities from the next 3 tabs will be redirected to a 404 page because they don't have detailed view pages */}
               <Panel title="Species">
                 {currentFilm.species
                   ? <RelatedDataPanel contentList={dataListService.getSpeciesList(currentFilm)} urlPath='species' />

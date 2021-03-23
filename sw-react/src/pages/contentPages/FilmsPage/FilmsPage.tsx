@@ -9,7 +9,7 @@ import { FilmModel } from '../../../models/filmModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
 import styles from '../commonStyles.module.css';
 
-/* NOTE: каждый раз, при входе в компонент я заново загружаю все данные из APi, а не пользуюсь уже ранее сохранёнными в сторе, потому что это необходимо по условию задачи */
+/* NOTE: every time I enter the component, I reload all the data from APi, and do not use the data already saved in the store, because it is necessary by the condition of the task */
 
 export const FilmsPage: React.FC = () => {
 
@@ -17,7 +17,7 @@ export const FilmsPage: React.FC = () => {
 
   useEffect(() => loadAllFilms(), [])
 
-  /* NOTE: на основе массива с фильмами формирую список, для его последующего рендеринга в сайд-баре */
+  /* Based on the array with movies, I form a list for its subsequent rendering in the side bar */
   const selector = (state: any) => state
     .films
     .map((film: FilmModel) => (

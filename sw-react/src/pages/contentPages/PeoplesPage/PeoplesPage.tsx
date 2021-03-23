@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import styles from '../commonStyles.module.css'
 import { AsideList } from '../../../components/AsideList';
 import { loadAllCharacters } from '../../../api/services/charactersService/charactersService';
 import { CharacterModel } from '../../../models/characterModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
 import { PeopleMainContent } from "../../../components/MainContent/PeopleMainContent/PeopleMainContent";
+import styles from '../commonStyles.module.css'
 
 export const PeoplesPage: React.FC = () => {
 

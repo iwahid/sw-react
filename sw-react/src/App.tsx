@@ -23,7 +23,7 @@ export const App: React.FC = () => (
         <Route component={LoginPage} path="/login" exact />
         <Redirect from="/" to="/films" />
 
-        {/* FIXME: навигация для дочерних роутов (редактирование) */}
+        {/* FIXME: Navigation for child routes (edits) */}
         {/*     <Route path="/planets/:id?" render={({ match: { path } }) => (
             <Switch>
               <Route exact component={Planetspage} path={path} />
@@ -31,9 +31,9 @@ export const App: React.FC = () => (
             </Switch>
           )} /> */}
 
-        {/* FIXME: авторизация 
-               <Route exact path="/">
-                  {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
+        {/* FIXME: Add uthorization 
+               <Route exact path="/edit">
+                  {loggedIn ? <Redirect to="/edit" /> : </login />}
                </Route>
            */}
         <Route component={() => <div>Test</div>} path="/test" exact />

@@ -8,6 +8,8 @@ interface IuserCredentials {
   password: string
 }
 
+/* FIXME: Add typing for return values */
+
 export function userRegister(userCredentials: IuserCredentials) {
   db.auth().createUserWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
