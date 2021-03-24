@@ -16,12 +16,14 @@ export const App: React.FC = () => (
       </div>
 
       <Switch>
+        <Redirect from="/" to="/films" exact />
         <Route component={FilmsPage} path="/films/:id?" />
         <Route component={PeoplesPage} path="/peoples/:id?" />
         <Route component={PlanetsPage} path="/planets/:id?" />
 
         <Route component={LoginPage} path="/login" exact />
-        <Redirect from="/" to="/films" exact />
+
+        <Route component={NotFoundPage} path="*" />
 
         {/* FIXME: Navigation for child routes (edits) */}
         {/*     <Route path="/planets/:id?" render={({ match: { path } }) => (
@@ -36,8 +38,6 @@ export const App: React.FC = () => (
                   {loggedIn ? <Redirect to="/edit" /> : </login />}
                </Route>
            */}
-        <Route component={() => <div>Test</div>} path="/test" exact />
-        <Route component={NotFoundPage} path="*" />
       </Switch>
     </BrowserRouter>
   </div>

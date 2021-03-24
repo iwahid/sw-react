@@ -1,3 +1,11 @@
+:root {
+  --main-bg-color: #222426;
+  --main-second-bg-color:  #161616;
+  --main-accent-color: #f9ff1a;
+  --main-primary-text-color: white;
+  --main-secondary-text-color: #808080;
+}
+
 body {
   display: flex;
   flex-direction: column;
