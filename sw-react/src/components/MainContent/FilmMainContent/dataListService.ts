@@ -1,5 +1,5 @@
 /** Getting a list with the necessary data in a certain format, for each of the categories */
-import { ExtendedFilmModel } from '../../../models/extendedFilmModel';
+import { ExtendedFilmModel } from '../../../models';
 
 /** Result list interface */
 export interface IResultList {

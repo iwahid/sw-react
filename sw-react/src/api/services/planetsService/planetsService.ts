@@ -1,8 +1,8 @@
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import { db } from '../../firebaseService'
 import { store } from '../../../store/store';
-import { PlanetModel } from '../../../models/planetModel';
-import { mapPlanetDtoToPlanetModel } from '../../mappers/planetMapper';
+import { PlanetModel } from '../../../models';
+import { mapPlanetDtoToPlanetModel } from '../../mappers';
 
 const { dispatch } = store
 
@@ -24,5 +24,5 @@ export const loadAllPlanet = () => (
         payload: planets
       })
     })
-    /* TODO: Handle possible errors while receiving data */
+  /* TODO: Handle possible errors while receiving data */
 )

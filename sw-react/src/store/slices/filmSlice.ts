@@ -1,4 +1,4 @@
-import { FilmModel } from '../../models/filmModel';
+import { FilmModel } from '../../models';
 
 const initialState: FilmModel[] = []
 

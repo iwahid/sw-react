@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import { PlanetModel } from '../../../models/planetModel';
+import { PlanetModel } from '../../../models';
 import styles from './PlanetMainContent.module.css'
 import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
 

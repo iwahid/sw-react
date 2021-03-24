@@ -1,10 +1,12 @@
 
 import { configureStore } from '@reduxjs/toolkit'
-import { currentFilmReducer } from './slices/currentFilmSlice';
-import { filmsReducer } from './slices/filmSlice';
-import { peoplesReducer } from './slices/peopleSlice'
-import { planetsReducer } from './slices/planetSlice';
-import { userReducer } from './slices/userSlice';
+import {
+  userReducer,
+  filmsReducer,
+  peoplesReducer,
+  planetsReducer,
+  currentFilmReducer,
+} from './slices';
 
 /* FIXME: Add typing for state */
 export const store = configureStore({

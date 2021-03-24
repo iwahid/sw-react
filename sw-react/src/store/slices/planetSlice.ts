@@ -1,4 +1,4 @@
-import { PlanetModel } from '../../models/planetModel';
+import { PlanetModel } from '../../models';
 
 const initialState: PlanetModel[] = []
 

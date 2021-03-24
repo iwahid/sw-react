@@ -1,20 +1,22 @@
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import { db } from '../../firebaseService'
 import { store } from '../../../store/store';
-
-import { mapFilmDtoToFilmModel } from '../../mappers/filmMapper';
-import { mapPlanetDtoToPlanetModel } from "../../mappers/planetMapper";
-import { mapSpecieDtoToSpecieModel } from "../../mappers/specieMapper";
-import { mapStarshipDtoToStarshipMode } from '../../mappers/starshipMapper';
-import { mapVehicleDtoToVehicleModel } from "../../mappers/vehicleMapper";
-import { mapCharacterDtoToCharacterModel } from '../../mappers/characterMapper';
-
-import { FilmModel } from '../../../models/filmModel';
-import { PlanetModel } from '../../../models/planetModel';
-import { CharacterModel } from '../../../models/characterModel';
-import { SpecieModel } from '../../../models/specieModel';
-import { StarshipModel } from '../../../models/starshipModel';
-import { VehicleModel } from '../../../models/vehicleModel';
+import {
+  mapFilmDtoToFilmModel,
+  mapPlanetDtoToPlanetModel,
+  mapSpecieDtoToSpecieModel,
+  mapStarshipDtoToStarshipMode,
+  mapVehicleDtoToVehicleModel,
+  mapCharacterDtoToCharacterModel,
+} from '../../mappers';
+import {
+  FilmModel,
+  SpecieModel,
+  PlanetModel,
+  VehicleModel,
+  StarshipModel,
+  CharacterModel,
+} from '../../../models';
 
 const { dispatch } = store
 
@@ -73,7 +75,7 @@ export const loadExtraDataToCurrentFilm = <T, F>(
         });
         dispatch(actionCreate(result))
       })
-      /* TODO: Handle possible errors while receiving data */
+    /* TODO: Handle possible errors while receiving data */
   }
 }
 

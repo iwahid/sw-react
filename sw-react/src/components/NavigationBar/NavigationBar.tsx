@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import styles from './NavigationBar.module.css'
 import { userLogout } from '../../api/services/userService/userService';
 import logo from "../../assets/imagePlaceHolder/SW-logo_large.png"
+import styles from './NavigationBar.module.css'
 
 
 export const NavigationBar: React.FC = () => {

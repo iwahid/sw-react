@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import styles from './FilmMainContent.module.css'
-import { Panel } from '../../TabsSection/Panel';
 
 import { store } from "../../../store/store";
-import { Tabs } from '../../TabsSection/Tabs';
-import { FilmModel } from '../../../models/filmModel';
 import { updateCurrentFilm } from '../../../api/services/FilmsService/filmsService';
-import { ExtendedFilmModel } from "../../../models/extendedFilmModel";
+import { FilmModel, ExtendedFilmModel } from "../../../models";
+
+import { Tabs } from '../../TabsSection/Tabs';
 import { RelatedDataPanel } from '../RelatedTabs/RelatedDataPanel';
+import { Panel } from '../../TabsSection/Panel';
 import * as dataListService from './dataListService'
+
+import styles from './FilmMainContent.module.css'
 import "../../TabsSection/commonStyles.module.css"
 
 /* NOTE: The section on the movies page showing the main information about the selected movie is not yet complete */

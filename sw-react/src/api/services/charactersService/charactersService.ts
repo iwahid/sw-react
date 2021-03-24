@@ -1,7 +1,7 @@
-import { CharacterModel } from '../../../models/characterModel';
 import { db } from '../../firebaseService'
-import { mapCharacterDtoToCharacterModel } from '../../mappers/characterMapper';
 import { store } from '../../../store/store';
+import { CharacterModel } from '../../../models';
+import { mapCharacterDtoToCharacterModel } from '../../mappers';
 
 const { dispatch } = store
 

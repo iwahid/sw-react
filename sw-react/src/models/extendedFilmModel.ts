@@ -1,7 +1,7 @@
-import {CharacterModel} from "./characterModel";
-import {PlanetModel} from "./planetModel";
-import {StarshipModel} from "./starshipModel";
-import {VehicleModel} from "./vehicleModel";
+import { CharacterModel } from "./characterModel";
+import { PlanetModel } from "./planetModel";
+import { StarshipModel } from "./starshipModel";
+import { VehicleModel } from "./vehicleModel";
 import { SpecieModel } from './specieModel';
 
 /**

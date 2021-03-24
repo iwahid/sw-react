@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import styles from './PeopleMainContent.module.css'
-import { CharacterModel } from "../../../models/characterModel";
+import { CharacterModel } from "../../../models";
 import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
+import styles from './PeopleMainContent.module.css'
 
 
 /** ID parameter for the selected people */

@@ -1,4 +1,4 @@
-import { CharacterModel } from '../../models/characterModel';
+import { CharacterModel } from '../../models';
 
 const initialState: CharacterModel[] = []
 
