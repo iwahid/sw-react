@@ -35,8 +35,6 @@ export const loadAllFilms = () =>
         type: 'films/loadAllFilms',
         payload: films
       })
-
-      console.log("Getting planets list: ", films);
     })
 
 /** Chunk array function to bypass firebase limitation  */
@@ -75,9 +73,7 @@ export const loadExtraDataToCurrentFilm = <T, F>(
         });
         dispatch(actionCreate(result))
       })
-      .catch((error) => {
-        console.log("Error getting documents: ", error);
-      });
+      /* TODO: Handle possible errors while receiving data */
   }
 }
 

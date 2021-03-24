@@ -23,7 +23,6 @@ export const loadAllPlanet = () => (
         type: 'planets/loadAllPlanets',
         payload: planets
       })
-
-      console.log("Getting planets list: ", planets);
     })
+    /* TODO: Handle possible errors while receiving data */
 )

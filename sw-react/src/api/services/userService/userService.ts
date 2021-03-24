@@ -1,7 +1,7 @@
 import { db } from "../../firebaseService";
-import {store} from '../../../store/store';
+import { store } from '../../../store/store';
 
-const {dispatch} = store
+const { dispatch } = store
 
 interface IuserCredentials {
   email: string,
@@ -13,17 +13,10 @@ interface IuserCredentials {
 export function userRegister(userCredentials: IuserCredentials) {
   db.auth().createUserWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
-      const {user} = responseUserCredential;
+      const { user } = responseUserCredential;
 
       console.log("USER REGISTERED: ", user)
     })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      console.log('USER REGISTERED ERROR: ', errorCode)
-      console.log('USER REGISTERED ERROR: ', errorMessage)
-    });
 }
 
 export function userLogin(userCredentials: IuserCredentials) {
@@ -31,15 +24,9 @@ export function userLogin(userCredentials: IuserCredentials) {
     .then((responseUserCredential) => {
       const user = responseUserCredential.user ? responseUserCredential.user : { email: '' };
       dispatch({ type: 'user/auth', payload: { email: user.email } })
-      console.log("USER LOGGED", user)
     })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      console.log('USER LOGGED ERROR. errorCode   : ', errorCode)
-      console.log('USER LOGGED ERROR. errorMessage: ', errorMessage)
-    });
+  /* TODO: Handle possible errors while receiving data in ".catch" method.
+     Explicitly notify the user of any problems encountered */
 }
 
 export function userLogout() {
@@ -48,12 +35,4 @@ export function userLogout() {
       dispatch({ type: 'user/logout', payload: { email: '' } })
       console.log("USER LOGOUT")
     })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      console.log('USER LOGOUT ERROR. errorCode   : ', errorCode)
-      console.log('USER LOGOUT ERROR. errorMessage: ', errorMessage)
-    });
-
 }

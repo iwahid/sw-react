@@ -22,7 +22,6 @@ export const loadAllCharacters = () => (
         type: 'peoples/loadAllPeoples',
         payload: peoples
       })
-
-      console.log("Getting peoples list: ", peoples);
     })
+    /* TODO: Handle possible errors while receiving data */
 )
