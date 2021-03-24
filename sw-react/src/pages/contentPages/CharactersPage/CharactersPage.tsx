@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { AsideList } from '../../../components/AsideList';
+import { CharacterMainContent } from "../../../components/MainContent/CharacterMainContent/CharacterMainContent";
 import { loadAllCharacters } from '../../../api/services/charactersService/charactersService';
-import { CharacterModel } from '../../../models/characterModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
-import { PeopleMainContent } from "../../../components/MainContent/PeopleMainContent/PeopleMainContent";
+import { CharacterModel } from '../../../models/characterModel';
 import styles from '../commonStyles.module.css'
 
-export const PeoplesPage: React.FC = () => {
+export const CharactersPage: React.FC = () => {
 
-  const currentRoute = 'peoples'
+  const currentRoute = 'characters'
 
   useEffect(() => loadAllCharacters(), [])
 
-  const selector = (state: any) => state.peoples.map((people: CharacterModel) => (
-      {
-        title: people.name,
-        id: people.docId
-      }
-    ))
+  const selector = (state: any) => state.characters.map((character: CharacterModel) => (
+    {
+      title: character.name,
+      id: character.docId
+    }
+  ))
 
   const linksList: IAsideLink[] = useSelector(selector)
 
@@ -30,7 +30,7 @@ export const PeoplesPage: React.FC = () => {
         </div>
 
         <div className={styles.mainContent}>
-          <PeopleMainContent />
+          <CharacterMainContent />
         </div>
       </div>
     </div>

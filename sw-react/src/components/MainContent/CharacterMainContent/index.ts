@@ -1,0 +1,2 @@
+export { CharacterMainContent } from './CharacterMainContent'; 
+ 

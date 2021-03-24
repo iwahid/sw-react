@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { NavigationBar } from './components/NavigationBar';
 import { FilmsPage } from './pages/contentPages/FilmsPage';
-import { PeoplesPage } from './pages/contentPages/PeoplesPage';
+import { CharactersPage } from './pages/contentPages/CharactersPage';
 import { PlanetsPage } from './pages/contentPages/PlanetsPage';
 import { LoginPage } from './pages/LoginPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
@@ -18,7 +18,7 @@ export const App: React.FC = () => (
       <Switch>
         <Redirect from="/" to="/films" exact />
         <Route component={FilmsPage} path="/films/:id?" />
-        <Route component={PeoplesPage} path="/peoples/:id?" />
+        <Route component={CharactersPage} path="/characters/:id?" />
         <Route component={PlanetsPage} path="/planets/:id?" />
 
         <Route component={LoginPage} path="/login" exact />

@@ -11,16 +11,16 @@ export const loadAllCharacters = () => (
   db.firestore().collection("people")
     .onSnapshot((querySnapshot) => {
 
-      const peoples: CharacterModel[] = []
+      const characters: CharacterModel[] = []
 
       querySnapshot.forEach((doc) => {
         const mapped: CharacterModel = mapCharacterDtoToCharacterModel(doc.data().fields, doc.data().pk)
-        peoples.push(mapped);
+        characters.push(mapped);
       });
 
       dispatch({
-        type: 'peoples/loadAllPeoples',
-        payload: peoples
+        type: 'characters/loadAllCharacters',
+        payload: characters
       })
     })
     /* TODO: Handle possible errors while receiving data */

@@ -2,9 +2,9 @@ import { CharacterModel } from '../../models';
 
 const initialState: CharacterModel[] = []
 
-export const peoplesReducer = (state = initialState, action: any): typeof initialState => {
+export const charactersReducer = (state = initialState, action: any): typeof initialState => {
   switch (action.type) {
-    case 'peoples/loadAllPeoples': {
+    case 'characters/loadAllCharacters': {
       return action.payload
     }
     default:

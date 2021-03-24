@@ -36,7 +36,7 @@ export const NavigationBar: React.FC = () => {
         <div className={styles.navigationSection}>
           <ul className={styles.navigationNavGroup}>
             <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/films"><span>Films</span></NavLink></li>
-            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/peoples"><span>Peoples</span></NavLink></li>
+            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/characters"><span>characters</span></NavLink></li>
             <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/planets"><span>Planets</span></NavLink></li>
           </ul>
         </div>

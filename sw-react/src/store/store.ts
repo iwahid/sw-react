@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import {
   userReducer,
   filmsReducer,
-  peoplesReducer,
+  charactersReducer,
   planetsReducer,
   currentFilmReducer,
 } from './slices';
@@ -11,7 +11,7 @@ import {
 /* FIXME: Add typing for state */
 export const store = configureStore({
   reducer: {
-    peoples: peoplesReducer,
+    characters: charactersReducer,
     planets: planetsReducer,
     films: filmsReducer,
     user: userReducer,

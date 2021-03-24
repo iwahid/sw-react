@@ -91,7 +91,7 @@ export const FilmMainContent: React.FC = () => {
             <Tabs>
               <Panel title="Characters" >
                 {currentFilm.characters
-                  ? <RelatedDataPanel contentList={dataListService.getCharactersList(currentFilm)} urlPath='peoples' />
+                  ? <RelatedDataPanel contentList={dataListService.getCharactersList(currentFilm)} urlPath='characters' />
                   : loadingMessage
                 }
               </Panel>

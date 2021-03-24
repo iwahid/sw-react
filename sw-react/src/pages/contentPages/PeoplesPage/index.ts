@@ -1,2 +1,0 @@
-
-export { PeoplesPage } from './PeoplesPage'; 
