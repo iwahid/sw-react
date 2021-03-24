@@ -9,17 +9,17 @@ interface Props {
   currentRoute: string,
 }
 
-export const AsideList: React.FC<Props> = props => {
+export const AsideList: React.FC<Props> = ({linksList,currentRoute }) => {
 
   /** List of navigation links */
   const navList = (
     <ul className={styles.nav}>
-      {props.linksList.map((link) => (
+      {linksList.map((link) => (
         <li key={link.id}>
           <NavLink
             activeClassName={styles.selected}
             className={`${styles.linkItem} ${styles.linkTitle}`}
-            to={`/${props.currentRoute}/${link.id}`} >
+            to={`/${currentRoute}/${link.id}`} >
             {link.title}
           </NavLink>
         </li>
@@ -33,7 +33,7 @@ export const AsideList: React.FC<Props> = props => {
     <aside className={styles.wrapper}>
       <div className={styles.container}>
         {
-          props.linksList.length
+          linksList.length
             ? navList
             : loadingMessage
         }

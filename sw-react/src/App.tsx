@@ -21,7 +21,7 @@ export const App: React.FC = () => (
         <Route component={PlanetsPage} path="/planets/:id?" />
 
         <Route component={LoginPage} path="/login" exact />
-        <Redirect from="/" to="/films" />
+        <Redirect from="/" to="/films" exact />
 
         {/* FIXME: Navigation for child routes (edits) */}
         {/*     <Route path="/planets/:id?" render={({ match: { path } }) => (
