@@ -40,16 +40,16 @@ export const loadAllFilms = () =>
     })
 
 /** Chunk array function to bypass firebase limitation  */
-export const arrayСhunking = (fullListArray: number[]): number[][] => {
+const arrayСhunking = (fullListArray: number[]): number[][] => {
   /* NOTE: Firebase limitation */
-  const chankSize = 10;
-  const chanksArray: number[][] = [];
+  const chunkSize = 10;
+  const chunksArray: number[][] = [];
 
-  for (let i = 0; i < Math.ceil(fullListArray.length / chankSize); i++) {
-    chanksArray[i] = fullListArray.slice((i * chankSize), (i * chankSize) + chankSize);
+  for (let i = 0; i < Math.ceil(fullListArray.length / chunkSize); i++) {
+    chunksArray[i] = fullListArray.slice((i * chunkSize), (i * chunkSize) + chunkSize);
   }
 
-  return [...chanksArray]
+  return [...chunksArray]
 }
 
 
