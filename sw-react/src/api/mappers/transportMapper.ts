@@ -1,6 +1,7 @@
 import { TransportModel } from '../../models/transportModel';
 import { TransportDTO } from '../dtos/transportDTO';
 
+/** Mapper for transport */
 export function mapTransportDtoToTransportModel(transportDTO: TransportDTO, docId: number): TransportModel {
   return {
     cargoCapacity: transportDTO.cargo_capacity,

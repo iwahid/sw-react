@@ -1,6 +1,7 @@
 import { PlanetModel } from "../../models/planetModel";
 import { PlanetDTO } from "../dtos/planetDTO";
 
+/** Mapper planet */
 export function mapPlanetDtoToPlanetModel(planetDto: PlanetDTO, docId: number): PlanetModel {
   return {
     climate: planetDto.climate,

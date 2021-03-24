@@ -1,6 +1,7 @@
 import { CharacterModel } from "../../models/characterModel";
 import { CharacterDTO } from "../dtos/characterDTO";
 
+/** Mapper for character */
 export function mapCharacterDtoToCharacterModel(character: CharacterDTO, docId: number): CharacterModel {
   return {
     birthYear: character.birth_year,

@@ -1,6 +1,7 @@
 import { SpecieModel } from "../../models/specieModel";
 import { SpecieDTO } from "../dtos/specieDTO";
 
+/** Mapper for specie */
 export function mapSpecieDtoToSpecieModel(specieDto: SpecieDTO, docId: number): SpecieModel {
   return {
     averageHeight: specieDto.average_height,

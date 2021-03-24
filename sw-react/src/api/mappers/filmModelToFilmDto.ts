@@ -1,6 +1,7 @@
 import { FilmModel } from "../../models/filmModel";
 import { FilmDTO } from "../dtos/filmDTO";
 
+/** Mapper for film from extend film */
 export function mapFilmModelToFilmDto(film: FilmModel): FilmDTO {
   return {
     characters: film.characters,

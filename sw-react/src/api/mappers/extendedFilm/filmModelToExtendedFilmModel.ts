@@ -6,6 +6,7 @@ import {SpecieModel} from "../../../models/specieModel";
 import {StarshipModel} from "../../../models/starshipModel";
 import {VehicleModel} from "../../../models/vehicleModel";
 
+/** Mapper for extend film */
 export const mapFilmModelToExtendedFilmModel = (
   film: FilmModel,
   characters?: CharacterModel[],
@@ -14,18 +15,18 @@ export const mapFilmModelToExtendedFilmModel = (
   starships?: StarshipModel[],
   vehicles?: VehicleModel[],
 ): ExtendedFilmModel => ({
-    characters: characters || [],
+    characters: characters ?? [],
     created: film.created,
     director: film.director,
     docId: film.docId,
     edited: film.edited,
     episodeId: film.episodeId,
     openingCrawl: film.openingCrawl,
-    planets: planets || [],
+    planets: planets ?? [],
     producer: film.producer,
     releaseDate: film.releaseDate,
-    species: species || [],
-    starships: starships || [],
+    species: species ?? [],
+    starships: starships ?? [],
     title: film.title,
-    vehicles: vehicles || [],
+    vehicles: vehicles ?? [],
   })
