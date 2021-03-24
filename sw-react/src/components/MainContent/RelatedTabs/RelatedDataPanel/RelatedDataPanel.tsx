@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { IResultList } from '../../FilmMainContent/dataListService';
+import { ResultList } from '../../FilmMainContent/dataListService';
 import styles from './RelatedDatapanel.module.css'
 import imageBGPlaceHolder from '../../../../assets/imagePlaceHolder/SW-ImageNotFound_transparent.png'
 
 /** Props interface */
-interface IProps {
+interface componentProps {
   urlPath?: string,
-  contentList: IResultList[],
+  contentList: ResultList[],
 }
 
-export const RelatedDataPanel: React.FC<IProps> = props => (
+export const RelatedDataPanel: React.FC<componentProps> = ({urlPath, contentList}) => (
   <div className={styles.wrapper}>
-    {props.contentList.map((contentItem) =>
-      <Link key={contentItem.id} className={styles.item} to={`/${props.urlPath}/${contentItem.id}`} >
+    {contentList.map((contentItem) =>
+      <Link key={contentItem.id} className={styles.item} to={`/${urlPath}/${contentItem.id}`} >
 
         {/* An entity avatar as a background image */}
         <div

@@ -35,10 +35,10 @@ interface ParamTypes {
 
 export const FilmMainContent: React.FC = () => {
 
-  const urlParams: ParamTypes = useParams();
+  const { id } = useParams<ParamTypes>();
 
   /* Getting the film I need from the entire list of downloaded films in the store */
-  const film: FilmModel = useSelector((state: any) => state.films.find((findFilm: FilmModel) => findFilm.docId === Number(urlParams.id)))
+  const film: FilmModel = useSelector((state: any) => state.films.find((findFilm: FilmModel) => findFilm.docId === Number(id)))
 
   /* Update related data for the currently selected movie every time a new movie is selected in the sidebar */
   useEffect(() => {
@@ -56,7 +56,7 @@ export const FilmMainContent: React.FC = () => {
   const loadingMessage = "Loading..."
   return (
     <div className={styles.wrapper}>
-      {urlParams.id &&
+      {id &&
         <div className={styles.container}>
 
           <div className={styles.mainData}>
@@ -69,15 +69,15 @@ export const FilmMainContent: React.FC = () => {
                 <ul className={styles.informationList}>
                   <li className={styles.informationListItem}>
                     <span className={styles.informationListTitle}>Year:</span>
-                    <span className={styles.informationListContent}>{film ? film.releaseDate : ''}</span>
+                    <span className={styles.informationListContent}>{film?.releaseDate}</span>
                   </li>
                   <li className={styles.informationListItem}>
                     <span className={styles.informationListTitle}>Director:</span>
-                    <span className={styles.informationListContent}>{film ? film.director : ''}</span>
+                    <span className={styles.informationListContent}>{film?.director}</span>
                   </li>
                   <li className={styles.informationListItem}>
                     <span className={styles.informationListTitle}>Episode:</span>
-                    <span className={styles.informationListContent}>{film ? film.episodeId : ''}</span>
+                    <span className={styles.informationListContent}>{film?.episodeId}</span>
                   </li>
                 </ul>
                 {/* FIXME: Modify the Option Button for movie editing. Depends on authorization */}

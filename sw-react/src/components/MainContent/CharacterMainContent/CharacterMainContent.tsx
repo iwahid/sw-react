@@ -21,8 +21,8 @@ export const CharacterMainContent: React.FC = () => {
     state.characters.find((findCharacter: CharacterModel) => findCharacter.docId === Number(urlParams.id)))
 
   return (
-    (urlParams.id && character)
-      ? <div className={styles.wrapper}>
+    <div className={styles.wrapper}>
+      {urlParams.id && character && (
         <div className={styles.container}>
           <div className={styles.content}>
             <div className={styles.characterInfo}>
@@ -72,7 +72,8 @@ export const CharacterMainContent: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-      : null
+      )}
+    </div>
+
   )
 }

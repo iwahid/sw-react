@@ -1,16 +1,12 @@
 import { db } from "../../firebaseService";
 import { store } from '../../../store/store';
+import { UserModel } from '../../../models';
 
 const { dispatch } = store
 
-interface IuserCredentials {
-  email: string,
-  password: string
-}
-
 /* FIXME: Add typing for return values */
 
-export function userRegister(userCredentials: IuserCredentials) {
+export function userRegister(userCredentials: UserModel) {
   db.auth().createUserWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
       const { user } = responseUserCredential;
@@ -19,7 +15,7 @@ export function userRegister(userCredentials: IuserCredentials) {
     })
 }
 
-export function userLogin(userCredentials: IuserCredentials) {
+export function userLogin(userCredentials: UserModel) {
   db.auth().signInWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
       const user = responseUserCredential.user ? responseUserCredential.user : { email: '' };

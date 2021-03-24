@@ -3,13 +3,14 @@ import { Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import { userLogin } from '../../api/services/userService/userService';
+import { UserModel } from '../../models';
 
 
 /* NOTE: The skeleton of the page, with minimal functionality and style. 
 Will be completely redesigned in the future */
 
 export const LoginPage: React.FC = () => {
-  const [userCredentials, setUserCredentials] = useState({ email: '', password: '' })
+  const [userCredentials, setUserCredentials] = useState<UserModel>({ email: '', password: '' })
 
   const currentUser = useSelector((state: any) => state.user)
 
@@ -23,7 +24,7 @@ export const LoginPage: React.FC = () => {
     return <Redirect to='/' />
   }
 
-  /* форма */
+  /** Form */
   const SignupForm = () => {
     // Pass the useFormik() hook initial form values and a submit function that will
     // be called when the form is submitted
