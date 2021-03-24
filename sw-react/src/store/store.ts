@@ -1,4 +1,3 @@
-
 import { configureStore } from '@reduxjs/toolkit'
 import {
   userReducer,
@@ -6,7 +5,7 @@ import {
   charactersReducer,
   planetsReducer,
   currentFilmReducer,
-} from './slices';
+} from './reducers';
 
 /* FIXME: Add typing for state */
 export const store = configureStore({
