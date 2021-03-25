@@ -5,7 +5,7 @@ import { UserModel } from '../../../models';
 const { dispatch } = store
 
 /* FIXME: Add typing for return values */
-
+/** Registers a user using firebase services */
 export function userRegister(userCredentials: UserModel) {
   db.auth().createUserWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
@@ -15,6 +15,7 @@ export function userRegister(userCredentials: UserModel) {
     })
 }
 
+/** Authorizes user using firebase services */
 export function userLogin(userCredentials: UserModel) {
   db.auth().signInWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
@@ -25,6 +26,7 @@ export function userLogin(userCredentials: UserModel) {
      Explicitly notify the user of any problems encountered */
 }
 
+/** Log out user using firebase services */
 export function userLogout() {
   db.auth().signOut()
     .then((responseUserCredential) => {

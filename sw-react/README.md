@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# Features of the project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### An application that allows you to view data about the STARWARS universe: detailed information about all films, characters, planets, technology and everything else that was mentioned in the MCU.
 
-## Available Scripts
+1. View lists of everyone: movies, characters, planets
+2. View detailed information (name, height, weight, race, age, size, etc.) about each entity, on a separate page
+3. Viewing detailed information about the film: own and related data in the form of separate cards with a description (characters from the film, planets filmed in the film, equipment, etc.)
 
-In the project directory, you can run:
 
-### `npm start`
+# Rationale for some decisions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Multiple renderers in the "FilmMainContent" component**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Re-renders often occur in the component when data is received. These multiple component re-renders are due to a large number of small API requests.
+Each of the requests updates the object with the currently selected movie and thus (returning a new changed movie object in the reducer) triggers the component's rerender 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+**Lots of API requests for small pieces of data**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. This is an established requirement from the customer: batch loading of data
+2. The movie is updated gradually, in portions: when you open the movie, only part of the information about it is shown (the tabs are loaded one by one).
+This is a little longer than if I downloaded everything at once, in one piece, but nevertheless, this is a good scenario, since the user will see at least part of the information about the movie as quickly as possible, and he does not have to wait for its full download to start reading the information
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+**Late loading of additional related data for a movie**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Additional linked data necessary for watching a movie is loaded only at the moment when I open its page, and not when I go to the section with "all movies".
+I do not update the movie as a whole (I don’t replace its associated data at once), but I do it already on the movie viewing page only because this is due to the condition of the problem. "Should block as little data as possible. And load it only when explicitly required by the user."
+2. It makes no sense to load and update data for all films at once, when the user can watch them only for one or two.
+ - The film itself is loaded anew every time, which allows you to receive always up-to-date information about it.
+ - I cannot use the local Redax storage, from which I would pull out related data, because it still may not have related data (they may not be loaded at the moment if the user has not yet visited the pages with the planets or characters on separate pages.

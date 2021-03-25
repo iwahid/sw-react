@@ -10,6 +10,7 @@ interface componentProps {
   contentList: ResultList[],
 }
 
+/** Component used in tabs to render individual cards of related character / planet / entity data */
 export const RelatedDataPanel: React.FC<componentProps> = ({urlPath, contentList}) => (
   <div className={styles.wrapper}>
     {contentList.map((contentItem) =>

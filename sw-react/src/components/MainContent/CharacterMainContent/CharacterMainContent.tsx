@@ -11,6 +11,7 @@ interface ParamTypes {
   id?: string
 }
 
+/** A page containing detailed information on the selected character */
 export const CharacterMainContent: React.FC = () => {
   /* NOTE: I get parameters from the url, if there is an id in the parameters, I pull the character data from the store and display it,
    if not, show the stub */

@@ -9,7 +9,9 @@ interface Props {
   currentRoute: string,
 }
 
-export const AsideList: React.FC<Props> = ({linksList,currentRoute }) => {
+/** List for navigation, within a specific section/page. 
+ * Contains a complete list of all page data */
+export const AsideList: React.FC<Props> = ({ linksList, currentRoute }) => {
 
   /** List of navigation links */
   const navList = (

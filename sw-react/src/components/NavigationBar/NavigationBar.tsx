@@ -5,7 +5,7 @@ import { userLogout } from '../../api/services/userService/userService';
 import logo from "../../assets/imagePlaceHolder/SW-logo_large.png"
 import styles from './NavigationBar.module.css'
 
-
+/** The main way to navigate the app */
 export const NavigationBar: React.FC = () => {
 
   const currentUserEmail = useSelector((state: any) => state.user.email)

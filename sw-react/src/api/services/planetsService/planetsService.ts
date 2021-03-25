@@ -7,7 +7,7 @@ import { mapPlanetDtoToPlanetModel } from '../../mappers';
 const { dispatch } = store
 
 /* FIXME: Add typing for return values */
-
+/** Downloads all planets and saves to the store using a subscription */
 export const loadAllPlanet = () => (
   db.firestore().collection("planets")
     .onSnapshot((querySnapshot) => {

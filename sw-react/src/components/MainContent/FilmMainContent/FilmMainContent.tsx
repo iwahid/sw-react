@@ -14,25 +14,44 @@ import * as dataListService from './dataListService'
 import styles from './FilmMainContent.module.css'
 import "../../TabsSection/commonStyles.module.css"
 
-/* NOTE: The section on the movies page showing the main information about the selected movie is not yet complete */
-/* NOTE: Я не обновляю фильм целиком (не заменяю его связанные данные сразу), а делаю это уже на странице просмотра фильма только потому, что это по условию задачи. Я должен загражать как можно меньше данных. И загружать их только тогда, когда это явно потребуется пользователю. 
-Нет смысла грузить и обновлять данные для всех фильмов сразу, когда пользователь может посмотреть их только для одного или двух.
- - Сам фильм загружается каждый раз заново, что позволяет получать получать всегда актуальную информацию о нём.
- - Я не могу воспользоваться локальным хранилищем Redax, из которого бы я вытаскивал связанные данные, поскольку в нём так же до сих пор нет связанных данных (они могут быть не загружены на текущий момент), пока пользователь не попытается просмотреть список персонажей или планет на отдельной странице
- - Загружаю связанные данные для фильма на странице его просмотра, а ни тогда, когда пользователь тыкает по вкладкам. Конечно, пользователь может и не захотеть смотреть все связанные данные (ему достаточно было бы посмотреть основной раздел), и в таком случае не стоило бы их подгружать, но лучше так - загрузить данные заранее, чем заставлять его ждать каждый раз, когда он будет нажимать на новую вкладку и ждать когда там всё прогрузиться */
+/* NOTE: the section on the films page, which displays basic information 
+(details, cover, poster, film director, etc.) about the selected film, is not completed yet */
 
-/* NOTE: обновление фильма происходит постепенно, порционно: при открытии фильма, показывается лишь часть информации о нём (вкладки загружаются поочерёдно).
- Но, это хороший сценарий, поскольку пользователь максимально быстро увидит хотя бы часть информации о фильме, и ему не придётся ждать его полной загрузки, что бы начать читать информацию */
+/* NOTE: Additional linked data necessary for watching a movie is loaded only at the moment when I open its page,
+ and not when I go to the section with "all movies".
+I do not update the movie as a whole (I don’t replace its associated data at once), 
+but I do it already on the movie viewing page only because this is due to the condition of the problem. 
+"Should block as little data as possible. And load it only when explicitly required by the user."
+ 
+It makes no sense to load and update data for all films at once, when the user can watch them only for one or two.
+ - The film itself is loaded anew every time, which allows you to receive always up-to-date information about it.
+ - I cannot use the local Redax storage, from which I would pull out related data, 
+ because it still may not have related data (they may not be loaded at the moment 
+  if the user has not yet visited the pages with the planets or characters on separate pages.
 
-/* NOTE: множественные ререндеры компонента обусловлены большиим количеством маленьких запросов к API.
-  Каждый из запросов обновляет объект с текущим выбранным фильмом и тем самым (возвращая новый изменённый объект фильма в редьюсере)
-  тригерит ререндер компонента  */
+ - I load related data for the movie on the page of its viewing, and not when the user pokes on the tabs.
+  Of course, the user may not want to look at all the associated data (he would only need to look at the main section),
+   in which case it would not be worth loading them, but it is better to load the data in advance than to make
+    him wait every time he clicks to a new tab and wait for everything to be loaded there */
+
+/* NOTE: the movie is updated gradually, in portions: when you open the movie, 
+only part of the information about it is shown (the tabs are loaded one by one).
+This is a little longer than if I downloaded everything at once, in one piece, 
+but nevertheless, this is a good scenario, since the user will see at least part 
+of the information about the movie as quickly as possible, and he does not have to wait 
+for its full download to start reading the information */
+
+/* NOTE: Re-renders often occur in the component when data is received. 
+These multiple component re-renders are due to a large number of small API requests.
+Each of the requests updates the object with the currently selected movie and thus
+ (returning a new changed movie object in the reducer) triggers the component's rerender */
 
 /** ID parameter for the selected film */
 interface ParamTypes {
   id?: string
 }
 
+/** A page containing detailed information on the selected film */
 export const FilmMainContent: React.FC = () => {
 
   const { id } = useParams<ParamTypes>();

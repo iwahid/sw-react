@@ -7,6 +7,8 @@ import { PlanetModel } from '../../../models/planetModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
 import styles from '../commonStyles.module.css';
 
+/** Provider container page, for the planets page wrapping the content page
+ *  and passing the necessary data to the main components */
 export const PlanetsPage: React.FC = () => {
 
   const currentRoute = 'planets'

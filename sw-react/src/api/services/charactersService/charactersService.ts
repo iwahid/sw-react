@@ -6,7 +6,7 @@ import { mapCharacterDtoToCharacterModel } from '../../mappers';
 const { dispatch } = store
 
 /* FIXME: Add typing for return values */
-
+/** Downloads all characters and saves to the store using a subscription */
 export const loadAllCharacters = () => (
   db.firestore().collection("people")
     .onSnapshot((querySnapshot) => {

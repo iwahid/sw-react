@@ -11,6 +11,8 @@ import styles from '../commonStyles.module.css';
 
 /* NOTE: every time I enter the component, I reload all the data from APi, and do not use the data already saved in the store, because it is necessary by the condition of the task */
 
+/** Provider container page, for the films page wrapping the content page
+ *  and passing the necessary data to the main components */
 export const FilmsPage: React.FC = () => {
 
   const currentRoute = 'films'

@@ -21,7 +21,7 @@ import {
 const { dispatch } = store
 
 /* FIXME: Add typing for return values */
-/** The function of getting all movies in the application */
+/** Downloads all films and saves to the store using a subscription */
 export const loadAllFilms = () =>
   db.firestore().collection("films")
     .onSnapshot((querySnapshot) => {
@@ -52,7 +52,7 @@ const arrayСhunking = (fullListArray: number[]): number[][] => {
   return [...chunksArray]
 }
 
-
+/** Loads and stores additional related data for the movie */
 export const loadExtraDataToCurrentFilm = <T, F>(
   idList: number[],
   link: string,

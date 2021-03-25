@@ -7,6 +7,8 @@ import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
 import { CharacterModel } from '../../../models/characterModel';
 import styles from '../commonStyles.module.css'
 
+/** Provider container page, for the characters page wrapping the content page
+ *  and passing the necessary data to the main components */
 export const CharactersPage: React.FC = () => {
 
   const currentRoute = 'characters'

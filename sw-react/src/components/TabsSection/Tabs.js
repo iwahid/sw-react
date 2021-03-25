@@ -4,6 +4,7 @@
 import React, { Component } from "react";
 import styles from './commonStyles.module.css'
 
+/** Component container for individual tabs. Used to display related data */
 export class Tabs extends Component {
   state = {
     selected: this.props.selected || 0

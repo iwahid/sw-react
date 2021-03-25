@@ -9,7 +9,7 @@ import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.p
 interface ParamTypes {
   id?: string
 }
-
+/** A page containing detailed information on the selected planet */
 export const PlanetMainContent: React.FC = () => {
 
   const urlParams: ParamTypes = useParams();

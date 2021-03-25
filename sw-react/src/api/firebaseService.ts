@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-/* FIXME: Config for connecting and initializing the database */
+/** Config for connecting and initializing the database */
 const firebaseConfig = {
   apiKey: "AIzaSyBej9vAIUgq_zn3LfZMByY-_Q-sffq53JQ",
   authDomain: "sw-angular-ac347.firebaseapp.com",
