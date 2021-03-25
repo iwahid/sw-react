@@ -6,7 +6,7 @@ const { dispatch } = store
 
 /* FIXME: Add typing for return values */
 /** Registers a user using firebase services */
-export function userRegister(userCredentials: UserModel) {
+export const userRegister = (userCredentials: UserModel) => {
   db.auth().createUserWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
       const { user } = responseUserCredential;
@@ -16,7 +16,7 @@ export function userRegister(userCredentials: UserModel) {
 }
 
 /** Authorizes user using firebase services */
-export function userLogin(userCredentials: UserModel) {
+export const userLogin = (userCredentials: UserModel) => {
   db.auth().signInWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
       const user = responseUserCredential.user ? responseUserCredential.user : { email: '' };
@@ -27,7 +27,7 @@ export function userLogin(userCredentials: UserModel) {
 }
 
 /** Log out user using firebase services */
-export function userLogout() {
+export const userLogout = () => {
   db.auth().signOut()
     .then((responseUserCredential) => {
       dispatch({ type: 'user/logout', payload: { email: '' } })

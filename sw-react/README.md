@@ -30,4 +30,4 @@ This is a little longer than if I downloaded everything at once, in one piece, b
 I do not update the movie as a whole (I don’t replace its associated data at once), but I do it already on the movie viewing page only because this is due to the condition of the problem. "Should block as little data as possible. And load it only when explicitly required by the user."
 2. It makes no sense to load and update data for all films at once, when the user can watch them only for one or two.
  - The film itself is loaded anew every time, which allows you to receive always up-to-date information about it.
- - I cannot use the local Redax storage, from which I would pull out related data, because it still may not have related data (they may not be loaded at the moment if the user has not yet visited the pages with the planets or characters on separate pages.
+ - I cannot use the local Redux storage, from which I would pull out related data, because it still may not have related data (they may not be loaded at the moment if the user has not yet visited the pages with the planets or characters on separate pages.
