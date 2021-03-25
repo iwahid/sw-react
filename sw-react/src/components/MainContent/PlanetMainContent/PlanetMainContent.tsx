@@ -17,7 +17,7 @@ export const PlanetMainContent: React.FC = () => {
   /* I get the planet I need from the entire list of loaded planets in the store */
   const planet: PlanetModel = useSelector((state: any) => state.planets.find((findPlanet: PlanetModel) => findPlanet.docId === Number(urlParams.id)))
 
-  /* FIXME: An unnecessarily complex condition for checking the availability of a film */
+  /* FIXME: An unnecessarily complex condition for checking the availability of a planet */
   const backgroundImageStyles = {
     backgroundImage: `url('${planet ? planet.image ? planet.image : imageNotFound : ''}')`,
     backgroundSize: `${planet ? planet.image ? 'cover' : "contain" : ''}`,

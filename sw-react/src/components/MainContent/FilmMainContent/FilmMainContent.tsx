@@ -72,17 +72,27 @@ export const FilmMainContent: React.FC = () => {
 
   const currentFilm: ExtendedFilmModel = useSelector((state: any) => state.currentFilm)
 
+  /* FIXME: An unnecessarily complex condition for checking the availability of a film */
+  const backgroundImageStyles = {
+    backgroundImage: `url('${film ? film.imageBackground : ''}')`,
+    backgroundSize: `${film ? film.imageBackground ? 'cover' : "contain" : ''}`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    overflow: 'hidden',
+  }
+
   const loadingMessage = "Loading..."
   return (
     <div className={styles.wrapper}>
-      {id &&
+      {id && film &&
         <div className={styles.container}>
 
-          <div className={styles.mainData}>
+          <div className={styles.mainData} style={backgroundImageStyles}>
             <div className={styles.content}>
-              <div className={styles.poster} />
+              <div className={styles.poster}>
+                <img src={film ? film.imagePoster : ''} alt={film.title}/>
+              </div>
               <div className={styles.filmInformation}>
-                {/* FIXME: Check for correct semantics */}
                 <h1 className={styles.filmTitle}>{film && film.title}</h1>
                 {/* TODO: Change the output format of movie information */}
                 <ul className={styles.informationList}>
@@ -100,7 +110,7 @@ export const FilmMainContent: React.FC = () => {
                   </li>
                 </ul>
                 {/* FIXME: Modify the Option Button for movie editing. Depends on authorization */}
-                <button className={styles.editButton}>Edit</button>
+                {/* <button className={styles.editButton}>Edit</button> */}
               </div>
             </div>
           </div>

@@ -16,6 +16,8 @@ export function mapFilmModelToFilmDto(film: FilmModel): FilmDTO {
     species: film.species,
     starships: film.starships,
     title: film.title,
+    image_background: film.imageBackground,
+    image_poster: film.imagePoster,
     vehicles: film.vehicles,
   }
 }

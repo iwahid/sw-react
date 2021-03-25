@@ -19,7 +19,7 @@ export const mapFilmModelToExtendedFilmModel = (
     created: film.created,
     director: film.director,
     docId: film.docId,
-    edited: film.edited,
+    edited: film.edited, 
     episodeId: film.episodeId,
     openingCrawl: film.openingCrawl,
     planets: planets ?? [],
@@ -29,4 +29,6 @@ export const mapFilmModelToExtendedFilmModel = (
     starships: starships ?? [],
     title: film.title,
     vehicles: vehicles ?? [],
+    imageBackground: film.imageBackground,
+    imagePoster: film.imagePoster
   })

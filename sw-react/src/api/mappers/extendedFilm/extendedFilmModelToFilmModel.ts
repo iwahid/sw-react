@@ -16,5 +16,7 @@ export const mapExtendedFilmToFilmModel = (film: ExtendedFilmModel): FilmModel =
     episodeId: film.episodeId,
     title: film.title,
     edited: film.edited,
+    imagePoster: film.imagePoster,
+    imageBackground: film.imageBackground,
     created: film.created,
   })
