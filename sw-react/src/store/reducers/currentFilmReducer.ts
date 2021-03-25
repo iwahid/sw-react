@@ -14,6 +14,8 @@ const initialState: FilmModel = {
   starships: [],
   title: '',
   vehicles: [],
+  imageBackground: '',
+  imagePoster: '',
   docId: 0,
 }
 

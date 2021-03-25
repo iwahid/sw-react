@@ -17,6 +17,8 @@ export function mapFilmDtoToFilmModel(filmDto: FilmDTO, docId: number): FilmMode
     starships: filmDto.starships,
     title: filmDto.title,
     vehicles: filmDto.vehicles,
+    imageBackground: filmDto.image_background,
+    imagePoster: filmDto.image_poster,
     docId,
   }
 }

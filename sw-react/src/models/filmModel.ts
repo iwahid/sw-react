@@ -28,6 +28,10 @@ export interface FilmModel {
   title: string;
   /** Ids of vehicles that appeared in film */
   vehicles: number[];
+  /** Poster of the film */
+  imageBackground: string;
+  /** Background poster of the film */
+  imagePoster: string;
   /** Id of document in database */
   docId: number;
 }

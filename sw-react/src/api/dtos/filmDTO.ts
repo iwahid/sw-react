@@ -30,4 +30,8 @@ export interface FilmDTO {
   title: string;
   /** Ids of vehicles that appeared in film */
   vehicles: number[];
+  /** Poster of the film */
+  image_background: string;
+  /** Background poster of the film */
+  image_poster: string;
 }

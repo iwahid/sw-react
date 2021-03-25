@@ -34,6 +34,10 @@ export interface ExtendedFilmModel {
   title: string;
   /** Ids of vehicles that appeared in film */
   vehicles: VehicleModel[];
+  /** Poster of the film */
+  imageBackground: string;
+  /** Background poster of the film */
+  imagePoster: string;
   /** Id of document in database */
   docId: number;
 }
