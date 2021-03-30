@@ -1,0 +1,96 @@
+.navigation {
+  background-color: var(--main-second-bg-color);
+  padding: 10px 0;
+  position: sticky;
+}
+
+.navigationContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigationSection {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+span {
+  margin: 0;
+  font-size: 18px;
+}
+
+.navigationLogo {
+  position: relative;
+  padding: 5px 5px 5px 35px;
+  display: flex;
+  color: var(--main-primary-text-color);
+  transition: opacity .2s linear;
+}
+
+.navigationNavGroup {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.navigationLink {
+  position: relative;
+  display: block;
+  margin: 0 5px;
+  padding: 5px 10px 10px;
+  text-transform: uppercase;
+  color: var(--main-primary-text-color);
+  transition: opacity .2s linear;
+}
+
+.navigationLink:hover:after, .navigationLink:hover:before {
+  opacity: 0.7;
+}
+
+.navigationLink:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var( --main-accent-color);
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.selected:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var( --main-accent-color);
+  opacity: 1;
+  transition: opacity .2s linear;
+}
+
+.navigationButton {
+  margin: 0 15px;
+  padding: 5px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--main-accent-color);
+  border-radius: 3px;
+  color: var(--main-primary-text-color);
+  transition: border-color, color .2s linear;
+}
+
+.navigationButton:hover {
+  background-color: var(--main-accent-color);
+  color: var(--main-second-bg-color);
+  transition: border-color, color .2s linear;
+}
