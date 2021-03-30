@@ -31,3 +31,14 @@ I do not update the movie as a whole (I don’t replace its associated data at o
 2. It makes no sense to load and update data for all films at once, when the user can watch them only for one or two.
  - The film itself is loaded anew every time, which allows you to receive always up-to-date information about it.
  - I cannot use the local Redux storage, from which I would pull out related data, because it still may not have related data (they may not be loaded at the moment if the user has not yet visited the pages with the planets or characters on separate pages.
+
+
+# Project / repository problems
+
+After migrating the repository from the training GitLab hosting (Saritasa LLC) to personal GitHub hosting, there were problems and not all branches / commits were successfully migrated.
+
+This issue was caused by not working correctly with several separate tasks in one mono repository (as one branch).
+
+Feature branches were not saved in the history of the repository (project), because before transferring the repository from GitLab to GitHub, the branches were automatically merged into one master branch. As a result, feature branches ceased to exist separately.
+
+Compelled measure: a separate branch (projectDocs) was created to add documentation and make small fixes throughout the project, identified after the code review.

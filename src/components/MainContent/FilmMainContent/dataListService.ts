@@ -9,6 +9,12 @@ export interface ResultList {
   image?: string
 }
 
+/**
+ * Returns a list of planets as an array of objects to display related information in tabs
+ * 
+ * @param currentFilm - Film selected by the user to be viewed on screen
+ * @returns An array of objects to display containing basic category data
+ */
 export const getPlanetsList = (currentFilm: ExtendedFilmModel):ResultList[] => {
   const planetsList: ResultList[] = currentFilm.planets.map(planet => ({
       id: planet.docId,
@@ -19,6 +25,12 @@ export const getPlanetsList = (currentFilm: ExtendedFilmModel):ResultList[] => {
   return planetsList
 }
 
+/**
+ * Returns a list of characters as an array of objects to display related information in tabs
+ * 
+ * @param currentFilm - Film selected by the user to be viewed on screen
+ * @returns An array of objects to display containing basic category data
+ */
 export const getCharactersList = (currentFilm: ExtendedFilmModel):ResultList[] => {
   const charactersList: ResultList[] = currentFilm.characters.map(character => ({
       id: character.docId,
@@ -29,6 +41,12 @@ export const getCharactersList = (currentFilm: ExtendedFilmModel):ResultList[] =
   return charactersList
 }
 
+/**
+ * Returns a list of species as an array of objects to display related information in tabs
+ * 
+ * @param currentFilm - Film selected by the user to be viewed on screen
+ * @returns An array of objects to display containing basic category data
+ */
 export const getSpeciesList = (currentFilm: ExtendedFilmModel):ResultList[] => {
   const speciesList: ResultList[] = currentFilm.species.map(specie => ({
       id: specie.docId,
@@ -38,6 +56,12 @@ export const getSpeciesList = (currentFilm: ExtendedFilmModel):ResultList[] => {
   return speciesList
 }
 
+/**
+ * Returns a list of starships as an array of objects to display related information in tabs
+ * 
+ * @param currentFilm - Film selected by the user to be viewed on screen
+ * @returns An array of objects to display containing basic category data
+ */
 export const getStarshipsList = (currentFilm: ExtendedFilmModel):ResultList[] => {
   const starshipsList: ResultList[] = currentFilm.starships.map(starship => ({
       id: starship.docId,
@@ -47,6 +71,12 @@ export const getStarshipsList = (currentFilm: ExtendedFilmModel):ResultList[] =>
   return starshipsList
 }
 
+/**
+ * Returns a list of vehicles as an array of objects to display related information in tabs
+ * 
+ * @param currentFilm - Film selected by the user to be viewed on screen
+ * @returns An array of objects to display containing basic category data
+ */
 export const getVehiclesList = (currentFilm: ExtendedFilmModel):ResultList[] => {
   const vehiclesList: ResultList[] = currentFilm.vehicles.map(vehicle => ({
       id: vehicle.docId,

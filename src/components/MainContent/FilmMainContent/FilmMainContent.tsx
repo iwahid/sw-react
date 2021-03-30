@@ -90,7 +90,7 @@ export const FilmMainContent: React.FC = () => {
           <div className={styles.mainData} style={backgroundImageStyles}>
             <div className={styles.content}>
               <div className={styles.poster}>
-                <img src={film ? film.imagePoster : ''} alt={film.title}/>
+                <img alt={film.title} src={film ? film.imagePoster : ''}/>
               </div>
               <div className={styles.filmInformation}>
                 <h1 className={styles.filmTitle}>{film && film.title}</h1>
