@@ -2,13 +2,14 @@ import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { userLogout } from '../../api/services/userService/userService';
+import { RootState } from '../../store/store';
 import logo from "../../assets/imagePlaceHolder/SW-logo_large.png"
 import styles from './NavigationBar.module.css'
 
 /** The main way to navigate the app */
 export const NavigationBar: React.FC = () => {
 
-  const currentUserEmail = useSelector((state: any) => state.user.email)
+  const currentUserEmail = useSelector((state: RootState) => state.user.email)
   const history = useHistory()
 
   /** Login / logout function */

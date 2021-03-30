@@ -7,7 +7,6 @@ import {
   currentFilmReducer,
 } from './reducers';
 
-/* FIXME: Add typing for state */
 export const store = configureStore({
   reducer: {
     characters: charactersReducer,
@@ -17,3 +16,6 @@ export const store = configureStore({
     currentFilm: currentFilmReducer
   }
 })
+
+// Infer the `RootState` type from the store itself
+export type RootState = ReturnType<typeof store.getState>

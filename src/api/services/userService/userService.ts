@@ -4,9 +4,8 @@ import { UserModel } from '../../../models';
 
 const { dispatch } = store
 
-/* FIXME: Add typing for return values */
 /** Registers a user using firebase services */
-export const userRegister = (userCredentials: UserModel) => {
+export const userRegister = (userCredentials: UserModel): void => {
   db.auth().createUserWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
       const { user } = responseUserCredential;
@@ -16,7 +15,7 @@ export const userRegister = (userCredentials: UserModel) => {
 }
 
 /** Authorizes user using firebase services */
-export const userLogin = (userCredentials: UserModel) => {
+export const userLogin = (userCredentials: UserModel): void => {
   db.auth().signInWithEmailAndPassword(userCredentials.email, userCredentials.password)
     .then((responseUserCredential) => {
       const user = responseUserCredential.user ? responseUserCredential.user : { email: '' };
@@ -27,7 +26,7 @@ export const userLogin = (userCredentials: UserModel) => {
 }
 
 /** Log out user using firebase services */
-export const userLogout = () => {
+export const userLogout = (): void => {
   db.auth().signOut()
     .then((responseUserCredential) => {
       dispatch({ type: 'user/logout', payload: { email: '' } })

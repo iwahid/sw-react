@@ -7,6 +7,7 @@ import { AsideList } from '../../../components/AsideList';
 import { FilmMainContent } from '../../../components/MainContent/FilmMainContent';
 import { FilmModel } from '../../../models/filmModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
+import { RootState } from '../../../store/store';
 import styles from '../commonStyles.module.css';
 
 /* NOTE: every time I enter the component, I reload all the data from APi, and do not use the data already saved in the store, because it is necessary by the condition of the task */
@@ -20,7 +21,7 @@ export const FilmsPage: React.FC = () => {
   useEffect(() => loadAllFilms(), [])
 
   /* Based on the array with movies, I form a list for its subsequent rendering in the side bar */
-  const selector = (state: any) => state
+  const selector = (state: RootState) => state
     .films
     .map((film: FilmModel) => (
       {

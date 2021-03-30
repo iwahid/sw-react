@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { CharacterModel } from "../../../models";
 import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
 import styles from './PeopleMainContent.module.css'
+import { RootState } from '../../../store/store';
 
 
 /** ID parameter for the selected people */
@@ -18,7 +19,7 @@ export const CharacterMainContent: React.FC = () => {
   const urlParams: ParamTypes = useParams();
 
   /* Getting the planet I need from the entire list loaded into the store */
-  const character: CharacterModel = useSelector((state: any) =>
+  const character: CharacterModel | undefined = useSelector((state: RootState) =>
     state.characters.find((findCharacter: CharacterModel) => findCharacter.docId === Number(urlParams.id)))
 
   return (

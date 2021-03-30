@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { userLogin } from '../../api/services/userService/userService';
 import { UserModel } from '../../models';
+import { RootState } from '../../store/store';
 
 
 /* NOTE: The skeleton of the page, with minimal functionality and style. 
@@ -11,10 +12,9 @@ Will be completely redesigned in the future */
 export const LoginPage: React.FC = () => {
   const [userCredentials, setUserCredentials] = useState<UserModel>({ email: '', password: '' })
 
-  const currentUser = useSelector((state: any) => state.user)
+  const currentUser = useSelector((state: RootState) => state.user)
 
-  /* FIXME: Type events */
-  const handleFormSubmit = (event: any) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     userLogin(userCredentials)
   }

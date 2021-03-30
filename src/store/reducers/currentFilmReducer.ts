@@ -1,6 +1,6 @@
-import { FilmModel } from '../../models';
+import { ExtendedFilmModel } from "../../models/extendedFilmModel";
 
-const initialState: FilmModel = {
+const initialState: ExtendedFilmModel = {
   characters: [],
   created: '',
   director: '',
@@ -18,8 +18,6 @@ const initialState: FilmModel = {
   imagePoster: '',
   docId: 0,
 }
-
-/* FIXME: Type actions */
 
 export const currentFilmReducer = (state = initialState, action: any): typeof initialState => {
   switch (action.type) {
