@@ -39,7 +39,12 @@ export const loadAllFilms = () =>
       })
     })
 
-/** Chunk array function to bypass firebase limitation  */
+/**
+ * Chunk array function to bypass firebase limitation
+ * 
+ * @param fullListArray Array with id, by which you need to get the entire list of data from firebase 
+ * @returns A two-dimensional array containing arrays with a limited number of id's inside each
+ */
 const arrayСhunking = (fullListArray: number[]): number[][] => {
   /* NOTE: Firebase limitation */
   const chunkSize = 10;
@@ -52,7 +57,14 @@ const arrayСhunking = (fullListArray: number[]): number[][] => {
   return [...chunksArray]
 }
 
-/** Loads and stores additional related data for the movie */
+/**
+ * Loads and stores additional related data for the movie
+ * 
+ * @param idList List of all id by which to find data on firebase
+ * @param link The path by which you need to access data in the database
+ * @param mapperFunc The mapper function, with which will need to transform the data, before saving to the storage
+ * @param actionCreate A function that creates the required action to save data to the storage
+ */
 export const loadExtraDataToCurrentFilm = <T, F>(
   idList: number[],
   link: string,
@@ -79,27 +91,56 @@ export const loadExtraDataToCurrentFilm = <T, F>(
   }
 }
 
-
+/**
+ * Function for creating actions
+ * 
+ * @param characters Array of processed data, for saving to storage
+ * @returns Action
+ */
 const actionCharacters = (characters: CharacterModel[]) => ({
   type: 'currentFilm/loadCharactersToCurrentFilm',
   payload: characters
 })
 
+/**
+ * Function for creating actions
+ * 
+ * @param planets Array of processed data, for saving to storage
+ * @returns Action
+ */
 const actionPlanets = (planets: PlanetModel[]) => ({
   type: 'currentFilm/loadPlanetsToCurrentFilm',
   payload: planets
 })
 
+/**
+ * Function for creating actions
+ * 
+ * @param species Array of processed data, for saving to storage
+ * @returns Action
+ */
 const actionSpecies = (species: SpecieModel[]) => ({
   type: 'currentFilm/loadSpeciesToCurrentFilm',
   payload: species
 })
 
+/**
+ * Function for creating actions
+ * 
+ * @param starships Array of processed data, for saving to storage
+ * @returns Action
+ */
 const actionStarships = (starships: StarshipModel[]) => ({
   type: 'currentFilm/loadStarshipsToCurrentFilm',
   payload: starships
 })
 
+/**
+ * Function for creating actions
+ * 
+ * @param vehicles Array of processed data, for saving to storage
+ * @returns Action
+ */
 const actionVehicles = (vehicles: VehicleModel[]) => ({
   type: 'currentFilm/loadVehiclesToCurrentFilm',
   payload: vehicles
