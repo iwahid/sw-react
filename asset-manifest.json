@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/sw-react/static/css/main.27bfdd24.chunk.css",
+    "main.js": "/sw-react/static/js/main.a525ce77.chunk.js",
+    "main.js.map": "/sw-react/static/js/main.a525ce77.chunk.js.map",
+    "runtime-main.js": "/sw-react/static/js/runtime-main.d0c8da3a.js",
+    "runtime-main.js.map": "/sw-react/static/js/runtime-main.d0c8da3a.js.map",
+    "static/js/2.f170e0dc.chunk.js": "/sw-react/static/js/2.f170e0dc.chunk.js",
+    "static/js/2.f170e0dc.chunk.js.map": "/sw-react/static/js/2.f170e0dc.chunk.js.map",
+    "index.html": "/sw-react/index.html",
+    "static/css/main.27bfdd24.chunk.css.map": "/sw-react/static/css/main.27bfdd24.chunk.css.map",
+    "static/js/2.f170e0dc.chunk.js.LICENSE.txt": "/sw-react/static/js/2.f170e0dc.chunk.js.LICENSE.txt",
+    "static/media/NotFoundPage.module.css": "/sw-react/static/media/PageNotFound_404.4397f6a5.jpg",
+    "static/media/SW-ImageNotFound_transparent.6e808547.png": "/sw-react/static/media/SW-ImageNotFound_transparent.6e808547.png",
+    "static/media/Yoda-ImageNotFound.d35156a9.png": "/sw-react/static/media/Yoda-ImageNotFound.d35156a9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0c8da3a.js",
+    "static/js/2.f170e0dc.chunk.js",
+    "static/css/main.27bfdd24.chunk.css",
+    "static/js/main.a525ce77.chunk.js"
+  ]
+}
