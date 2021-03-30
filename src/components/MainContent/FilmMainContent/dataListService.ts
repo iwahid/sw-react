@@ -11,6 +11,7 @@ export interface ResultList {
 
 /**
  * Returns a list of planets as an array of objects to display related information in tabs
+ * 
  * @param currentFilm - Film selected by the user to be viewed on screen
  * @returns An array of objects to display containing basic category data
  */
@@ -26,6 +27,7 @@ export const getPlanetsList = (currentFilm: ExtendedFilmModel):ResultList[] => {
 
 /**
  * Returns a list of characters as an array of objects to display related information in tabs
+ * 
  * @param currentFilm - Film selected by the user to be viewed on screen
  * @returns An array of objects to display containing basic category data
  */
@@ -41,6 +43,7 @@ export const getCharactersList = (currentFilm: ExtendedFilmModel):ResultList[] =
 
 /**
  * Returns a list of species as an array of objects to display related information in tabs
+ * 
  * @param currentFilm - Film selected by the user to be viewed on screen
  * @returns An array of objects to display containing basic category data
  */
@@ -55,6 +58,7 @@ export const getSpeciesList = (currentFilm: ExtendedFilmModel):ResultList[] => {
 
 /**
  * Returns a list of starships as an array of objects to display related information in tabs
+ * 
  * @param currentFilm - Film selected by the user to be viewed on screen
  * @returns An array of objects to display containing basic category data
  */
@@ -69,6 +73,7 @@ export const getStarshipsList = (currentFilm: ExtendedFilmModel):ResultList[] =>
 
 /**
  * Returns a list of vehicles as an array of objects to display related information in tabs
+ * 
  * @param currentFilm - Film selected by the user to be viewed on screen
  * @returns An array of objects to display containing basic category data
  */
