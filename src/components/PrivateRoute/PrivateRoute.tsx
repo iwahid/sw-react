@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
@@ -15,11 +15,6 @@ export const PrivateRoute: React.FC<Props> = ({ children, ...rest }) => {
   /* Getting the planet I need from the entire list loaded into the store */
   const authUser: UserModel | undefined = useSelector((state: RootState) => state.user)
 
-  useEffect(() => {
-
-    console.log(authUser)
-
-  })
   return (
     <Route
       {...rest}
