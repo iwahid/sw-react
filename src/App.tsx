@@ -7,6 +7,7 @@ import { PlanetsPage } from './pages/contentPages/PlanetsPage';
 import { LoginPage } from './pages/LoginPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import styles from './App.module.css'
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 
 export const App: React.FC = () => (
   <div className={styles.app}>
@@ -17,15 +18,21 @@ export const App: React.FC = () => (
 
       <Switch>
         <Redirect from="/sw-react" to="/sw-react/films" exact />
-        <Route component={FilmsPage} path="/sw-react/films/:id?" />
-        <Route component={CharactersPage} path="/sw-react/characters/:id?" />
-        <Route component={PlanetsPage} path="/sw-react/planets/:id?" />
+        <PrivateRoute path="/sw-react/films/:id?">
+          <FilmsPage />
+        </PrivateRoute>
+        <PrivateRoute path="/sw-react/characters/:id?">
+          <CharactersPage />
+        </PrivateRoute>
+        <PrivateRoute path="/sw-react/planets/:id?">
+          <PlanetsPage />
+        </PrivateRoute>
 
         <Route component={LoginPage} path="/sw-react/login" exact />
 
         <Route component={NotFoundPage} path="*" />
 
-        {/* FIXME: Navigation for child routes (edits) */}
+        {/* FIXME: Navigation for child routes (edit screens) */}
         {/*     <Route path="/planets/:id?" render={({ match: { path } }) => (
             <Switch>
               <Route exact component={Planetspage} path={path} />
@@ -33,11 +40,6 @@ export const App: React.FC = () => (
             </Switch>
           )} /> */}
 
-        {/* FIXME: Add uthorization 
-               <Route exact path="/edit">
-                  {loggedIn ? <Redirect to="/edit" /> : </login />}
-               </Route>
-           */}
       </Switch>
     </BrowserRouter>
   </div>
