@@ -14,7 +14,7 @@ interface componentProps {
 export const RelatedDataPanel: React.FC<componentProps> = ({urlPath, contentList}) => (
   <div className={styles.wrapper}>
     {contentList.map((contentItem) =>
-      <Link key={contentItem.id} className={styles.item} to={`/${urlPath}/${contentItem.id}`} >
+      <Link key={contentItem.id} className={styles.item} to={`/sw-react/${urlPath}/${contentItem.id}`} >
 
         {/* An entity avatar as a background image */}
         <div

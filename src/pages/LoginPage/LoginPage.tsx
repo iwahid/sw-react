@@ -61,7 +61,7 @@ export const LoginPage: React.FC = () => {
   const currentUser = useSelector((state: RootState) => state.user)
 
   if (currentUser.email) {
-    return <Redirect to='/' />
+    return <Redirect to='/sw-react/' />
   }
 
   return (
