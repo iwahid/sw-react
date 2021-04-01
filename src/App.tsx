@@ -16,12 +16,12 @@ export const App: React.FC = () => (
       </div>
 
       <Switch>
-        <Redirect from="/" to="/films" exact />
-        <Route component={FilmsPage} path="/films/:id?" />
-        <Route component={CharactersPage} path="/characters/:id?" />
-        <Route component={PlanetsPage} path="/planets/:id?" />
+        <Redirect from="/sw-react" to="/sw-react/films" exact />
+        <Route component={FilmsPage} path="/sw-react/films/:id?" />
+        <Route component={CharactersPage} path="/sw-react/characters/:id?" />
+        <Route component={PlanetsPage} path="/sw-react/planets/:id?" />
 
-        <Route component={LoginPage} path="/login" exact />
+        <Route component={LoginPage} path="/sw-react/login" exact />
 
         <Route component={NotFoundPage} path="*" />
 

@@ -16,9 +16,9 @@ export const NavigationBar: React.FC = () => {
   const handleClick = () => {
     if (currentUserEmail !== '') {
       userLogout()
-      history.push('/')
+      history.push('/sw-react/')
     } else {
-      history.push('/login')
+      history.push('/sw-react/login')
     }
   }
 
@@ -27,7 +27,7 @@ export const NavigationBar: React.FC = () => {
       <div className={styles.navigationContainer}>
 
         <div className={styles.navigationSection}>
-          <NavLink className={styles.navigationLogo} to="/" >
+          <NavLink className={styles.navigationLogo} to="/sw-react/" >
             <img
               alt='Logo'
               src={logo} />
@@ -36,9 +36,9 @@ export const NavigationBar: React.FC = () => {
 
         <div className={styles.navigationSection}>
           <ul className={styles.navigationNavGroup}>
-            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/films"><span>Films</span></NavLink></li>
-            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/characters"><span>characters</span></NavLink></li>
-            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/planets"><span>Planets</span></NavLink></li>
+            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/sw-react/films"><span>Films</span></NavLink></li>
+            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/sw-react/characters"><span>characters</span></NavLink></li>
+            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/sw-react/planets"><span>Planets</span></NavLink></li>
           </ul>
         </div>
 

@@ -21,7 +21,7 @@ export const AsideList: React.FC<Props> = ({ linksList, currentRoute }) => {
           <NavLink
             activeClassName={styles.selected}
             className={`${styles.linkItem} ${styles.linkTitle}`}
-            to={`/${currentRoute}/${link.id}`} >
+            to={`/sw-react/${currentRoute}/${link.id}`} >
             {link.title}
           </NavLink>
         </li>
