@@ -20,9 +20,12 @@ import {
 
 const { dispatch } = store
 
-/* FIXME: Add typing for return values */
-/** Downloads all films and saves to the store using a subscription */
-export const loadAllFilms = () =>
+/**
+ *  Downloads all films and saves to the store using a subscription
+ * 
+ * @returns An unsubscribe function that needs to be called to unsubscribe from receiving new data
+ */
+export const loadAllFilms = (): (() => void) =>
   db.firestore().collection("films")
     .onSnapshot((querySnapshot) => {
 

@@ -5,6 +5,7 @@ import { AsideList } from '../../../components/AsideList';
 import { PlanetMainContent } from '../../../components/MainContent/PlanetMainContent/PlanetMainContent';
 import { PlanetModel } from '../../../models/planetModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
+import { RootState } from '../../../store/store';
 import styles from '../commonStyles.module.css';
 
 /** Provider container page, for the planets page wrapping the content page
@@ -15,7 +16,7 @@ export const PlanetsPage: React.FC = () => {
 
   useEffect(() => loadAllPlanet(), [])
 
-  const selector = (state: any) => state.planets.map((planet: PlanetModel) => (
+  const selector = (state: RootState) => state.planets.map((planet: PlanetModel) => (
       {
         title: planet.name,
         id: planet.docId

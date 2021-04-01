@@ -5,9 +5,13 @@ import { mapCharacterDtoToCharacterModel } from '../../mappers';
 
 const { dispatch } = store
 
-/* FIXME: Add typing for return values */
-/** Downloads all characters and saves to the store using a subscription */
-export const loadAllCharacters = () => (
+
+/**
+ *  Downloads all characters and saves to the store using a subscription
+ * 
+ * @returns An unsubscribe function that needs to be called to unsubscribe from receiving new data
+ */
+export const loadAllCharacters = (): (() => void) => (
   db.firestore().collection("people")
     .onSnapshot((querySnapshot) => {
 
@@ -23,5 +27,5 @@ export const loadAllCharacters = () => (
         payload: characters
       })
     })
-    /* TODO: Handle possible errors while receiving data */
+  /* TODO: Handle possible errors while receiving data */
 )

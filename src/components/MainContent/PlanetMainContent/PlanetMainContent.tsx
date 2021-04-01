@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { PlanetModel } from '../../../models';
 import styles from './PlanetMainContent.module.css'
 import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
+import { RootState } from '../../../store/store';
 
 /** ID parameter for the selected planet */
 interface ParamTypes {
@@ -15,7 +16,7 @@ export const PlanetMainContent: React.FC = () => {
   const urlParams: ParamTypes = useParams();
 
   /* I get the planet I need from the entire list of loaded planets in the store */
-  const planet: PlanetModel = useSelector((state: any) => state.planets.find((findPlanet: PlanetModel) => findPlanet.docId === Number(urlParams.id)))
+  const planet: PlanetModel | undefined = useSelector((state: RootState) => state.planets.find((findPlanet: PlanetModel) => findPlanet.docId === Number(urlParams.id)))
 
   /* FIXME: An unnecessarily complex condition for checking the availability of a planet */
   const backgroundImageStyles = {

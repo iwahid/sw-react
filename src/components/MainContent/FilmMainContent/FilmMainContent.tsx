@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 
-import { store } from "../../../store/store";
+import { RootState, store } from "../../../store/store";
 import { updateCurrentFilm } from '../../../api/services/FilmsService/filmsService';
 import { FilmModel, ExtendedFilmModel } from "../../../models";
 
@@ -57,7 +57,7 @@ export const FilmMainContent: React.FC = () => {
   const { id } = useParams<ParamTypes>();
 
   /* Getting the film I need from the entire list of downloaded films in the store */
-  const film: FilmModel = useSelector((state: any) => state.films.find((findFilm: FilmModel) => findFilm.docId === Number(id)))
+  const film: FilmModel | undefined = useSelector((state: RootState) =>state.films.find((findFilm: FilmModel) => findFilm.docId === Number(id)))
 
   /* Update related data for the currently selected movie every time a new movie is selected in the sidebar */
   useEffect(() => {
@@ -70,7 +70,7 @@ export const FilmMainContent: React.FC = () => {
       updateCurrentFilm(film)
   }, [film])
 
-  const currentFilm: ExtendedFilmModel = useSelector((state: any) => state.currentFilm)
+  const currentFilm: ExtendedFilmModel | undefined = useSelector((state: RootState) => state.currentFilm)
 
   /* FIXME: An unnecessarily complex condition for checking the availability of a film */
   const backgroundImageStyles = {

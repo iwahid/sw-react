@@ -80,17 +80,18 @@ span {
 
 .navigationButton {
   margin: 0 15px;
-  padding: 5px;
+  padding: 5px 10px;
+  font-weight: 500;
   text-transform: uppercase;
   background-color: transparent;
   border: 1px solid var(--main-accent-color);
-  border-radius: 3px;
+  border-radius: 2px;
   color: var(--main-primary-text-color);
-  transition: border-color, color .2s linear;
+  transition: color .2s linear, background-color .2s linear;
 }
 
 .navigationButton:hover {
   background-color: var(--main-accent-color);
-  color: var(--main-second-bg-color);
-  transition: border-color, color .2s linear;
+  color: var(--main-bg-color);
+  transition: color .2s linear, background-color .2s linear;
 }

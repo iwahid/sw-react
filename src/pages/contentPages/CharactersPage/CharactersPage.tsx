@@ -5,6 +5,7 @@ import { CharacterMainContent } from "../../../components/MainContent/CharacterM
 import { loadAllCharacters } from '../../../api/services/charactersService/charactersService';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
 import { CharacterModel } from '../../../models/characterModel';
+import { RootState } from '../../../store/store';
 import styles from '../commonStyles.module.css'
 
 /** Provider container page, for the characters page wrapping the content page
@@ -15,7 +16,7 @@ export const CharactersPage: React.FC = () => {
 
   useEffect(() => loadAllCharacters(), [])
 
-  const selector = (state: any) => state.characters.map((character: CharacterModel) => (
+  const selector = (state: RootState) => state.characters.map((character: CharacterModel) => (
     {
       title: character.name,
       id: character.docId

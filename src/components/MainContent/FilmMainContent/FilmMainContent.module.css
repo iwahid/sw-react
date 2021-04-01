@@ -13,7 +13,6 @@
 .mainData {
   width: 100%;
   height: 500px;
-  /* FIXME: Replace styles with general ones when the component changes */
   background-color: transparent;
 }
 
