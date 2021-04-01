@@ -43,7 +43,7 @@ export const NavigationBar: React.FC = () => {
         </div>
 
         <div className={styles.navigationSection}>
-          <button className={styles.navigationButton} onClick={handleClick} >{currentUserEmail !== '' ? 'Выйти' : 'Войти'}</button>
+          <button className={styles.navigationButton} onClick={handleClick} >{currentUserEmail !== '' ? 'logout' : 'login'}</button>
         </div>
       </div>
     </nav >
