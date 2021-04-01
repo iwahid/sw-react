@@ -24,12 +24,27 @@
   height: 100%;
 }
 
+@media (max-width: 560px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+  }
+}
+
 .formContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 300px;
   padding: 5px;
+}
+
+@media (max-width: 400px) {
+  .formContainer {
+    width: 90%;
+  }
 }
 
 .form {
@@ -120,10 +135,26 @@
   transition: color .2s linear, background-color .2s linear;
 }
 
+/* Stormtrooper images accompanying forms */
+
 .image {
-  width: 300px;
-  height: 650px;
-  background-color: yellowgreen;
+  max-width: 250px;
+}
+
+.stormtrooperLeft img, .stormtrooperRight img {
+  max-width: 250px;
+}
+
+@media (max-width: 800px) {
+  .stormtrooperRight {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .stormtrooperLeft {
+    display: none;
+  }
 }
 
 /* Block with messages about registration / authorization status */

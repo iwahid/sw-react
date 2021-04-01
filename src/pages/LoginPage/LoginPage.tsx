@@ -5,6 +5,8 @@ import { UserModel } from '../../models';
 import { RootState } from '../../store/store';
 import { userLogin, userRegister, FirebaseAuthResponse } from '../../api/services/userService/userService';
 import styles from './LoginPage.module.css'
+import stormtrooper1 from '../../assets/imagePlaceHolder/Stormtrooper1.png'
+import stormtrooper2 from '../../assets/imagePlaceHolder/Stormtrooper2.png'
 
 /* Login / registration form page */
 export const LoginPage: React.FC = () => {
@@ -65,6 +67,10 @@ export const LoginPage: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
+
+        <div className={`${styles.image} ${styles.stormtrooperLeft}`}>
+          <img alt="stormtrooper" src={stormtrooper1} />
+        </div>
 
         <div className={styles.formContainer}>
 
@@ -132,7 +138,10 @@ export const LoginPage: React.FC = () => {
 
           </form>
         </div>
-        <div className={styles.image}></div>
+       
+        <div className={`${styles.image} ${styles.stormtrooperRight}`}>
+          <img alt="stormtrooper" src={stormtrooper2} />
+        </div>
       </div>
     </div>
   );
