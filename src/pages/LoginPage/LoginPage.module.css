@@ -1,0 +1,150 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: url('./../../assets/imagePlaceHolder/SW-loginBackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: 'hidden';
+  background-color: aliceblue;
+  color: white;
+  text-shadow: 0px 0 30px var(--main-bg-color);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  padding: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.titleSection {
+  width: 100%;
+  overflow: hidden;
+}
+
+.titleContainer {
+  display: flex;
+  width: 220%;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 36px;
+  width: 100%;
+  color: var(--main-accent-color);
+  transition: 0.5s
+}
+
+.subTitle {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.formElement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0 15px 0;
+  width: 100%;
+}
+
+.formElement label {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var( --main-primary-text-color);
+  opacity: 0.8;
+}
+
+.formElement input {
+  width: 100%;
+  padding: 5px;
+  background-color: transparent;
+  border: 1px solid var(--main-primary-text-color);
+  color: var(--main-primary-text-color);
+  border-radius: 2px;
+  box-shadow: 0 0 10px 3px var(--main-bg-color);
+}
+
+.formElement .errorMessage {
+  margin-top: 5px;
+  color: red;
+}
+
+.formGroup {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.formGroup button {
+  background-color: transparent;
+  border: 1px solid var(--main-accent-color);
+  font-weight: 500;
+  padding: 5px 10px;
+  color: var(--main-primary-text-color);
+  border-radius: 2px;
+  transition: color .2s linear, background-color .2s linear;
+}
+
+.formGroup button:hover {
+  background-color: var(--main-accent-color);
+  color: var(--main-bg-color);
+  transition: color .2s linear, background-color .2s linear;
+}
+
+.image {
+  width: 300px;
+  height: 650px;
+  background-color: yellowgreen;
+}
+
+/* Block with messages about registration / authorization status */
+
+.registrationStatusSuccess, .registrationStatusError {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.registrationStatusSuccess p, .registrationStatusError p {
+  text-align: left;
+  color: var(--main-bg-color);
+  font-weight: 500;
+}
+
+.registrationStatusSuccess {
+  background-color: var(--main-accent-color);
+}
+
+.registrationStatusError {
+  background-color: red;
+}
