@@ -19,6 +19,10 @@
     &:first-child,
     &:last-child {
       margin: 0 15px;
+
+      @media (max-width: 400px) {
+        margin: 0 5px;
+      }
     }
   }
 
@@ -40,6 +44,21 @@
     font-size: 18px;
     color: var(--main-primary-text-color);
     transition: opacity 0.2s linear;
+
+    @media (max-width: 560px) {
+      padding: 5px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
 
     &:after {
       content: "";
@@ -70,7 +89,23 @@
     }
   }
 
-  &__logo img {
-    max-width: 208px;
+  &__logo {
+    height: 28px;
+    width: 208px;
+
+    background-image: url("./../../assets/imagePlaceHolder/SW-logo_full.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: "hidden";
+
+    @media (max-width: 768px) {
+      width: 54px;
+      background-image: url("./../../assets/imagePlaceHolder/SW-logo_short.png");
+    }
+
+    @media (max-width: 560px) {
+      width: 36px;
+    }
   }
 }

@@ -5,7 +5,8 @@ import { userLogout } from '../../api/services/userService/userService';
 import { RootState } from '../../store/store';
 import { Button } from '../UIComponents/Button/Button';
 import styles from './NavigationBar.module.scss'
-import logo from "../../assets/imagePlaceHolder/SW-logo_large1.png"
+import LOGO_FULL from "../../assets/imagePlaceHolder/SW-logo_full.png"
+import LOGO_SHORT from "../../assets/imagePlaceHolder/SW-logo_short.png"
 
 /** The main way to navigate the app */
 export const NavigationBar: React.FC = () => {
@@ -28,9 +29,9 @@ export const NavigationBar: React.FC = () => {
       <div className={styles.navigation__container}>
 
         <div className={styles.navigation__section}>
-        {/*   <NavLink className={styles.navigation__logo} to="/sw-react/" >
-            <img alt='Logo' src={logo} />
-          </NavLink> */}
+          <NavLink className={styles.navigation__logo} to="/sw-react/" >
+            {/* <img alt='Logo' src={LOGO_FULL} /> */}
+          </NavLink>
         </div>
 
         <div className={styles.navigation__section}>
