@@ -120,22 +120,6 @@
   width: 100%;
 }
 
-.formGroup button {
-  background-color: transparent;
-  border: 1px solid var(--main-accent-color);
-  font-weight: 500;
-  padding: 5px 10px;
-  color: var(--main-primary-text-color);
-  border-radius: 2px;
-  transition: color .2s linear, background-color .2s linear;
-}
-
-.formGroup button:hover {
-  background-color: var(--main-accent-color);
-  color: var(--main-bg-color);
-  transition: color .2s linear, background-color .2s linear;
-}
-
 /* Stormtrooper images accompanying forms */
 
 .image {

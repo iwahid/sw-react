@@ -3,8 +3,9 @@ import { NavLink, useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { userLogout } from '../../api/services/userService/userService';
 import { RootState } from '../../store/store';
-import logo from "../../assets/imagePlaceHolder/SW-logo_large.png"
-import styles from './NavigationBar.module.css'
+import { Button } from '../UIComponents/Button/Button';
+import styles from './NavigationBar.module.scss'
+import logo from "../../assets/imagePlaceHolder/SW-logo_large1.png"
 
 /** The main way to navigate the app */
 export const NavigationBar: React.FC = () => {
@@ -24,26 +25,24 @@ export const NavigationBar: React.FC = () => {
 
   return (
     <nav className={styles.navigation}>
-      <div className={styles.navigationContainer}>
+      <div className={styles.navigation__container}>
 
-        <div className={styles.navigationSection}>
-          <NavLink className={styles.navigationLogo} to="/sw-react/" >
-            <img
-              alt='Logo'
-              src={logo} />
-          </NavLink>
+        <div className={styles.navigation__section}>
+        {/*   <NavLink className={styles.navigation__logo} to="/sw-react/" >
+            <img alt='Logo' src={logo} />
+          </NavLink> */}
         </div>
 
-        <div className={styles.navigationSection}>
-          <ul className={styles.navigationNavGroup}>
-            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/sw-react/films"><span>Films</span></NavLink></li>
-            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/sw-react/characters"><span>characters</span></NavLink></li>
-            <li ><NavLink activeClassName={styles.selected} className={styles.navigationLink} to="/sw-react/planets"><span>Planets</span></NavLink></li>
+        <div className={styles.navigation__section}>
+          <ul className={styles.navigation__linkGroup}>
+            <li ><NavLink activeClassName={styles.navigation__link_selected} className={styles.navigation__link} to="/sw-react/films"><span>Films</span></NavLink></li>
+            <li ><NavLink activeClassName={styles.navigation__link_selected} className={styles.navigation__link} to="/sw-react/characters"><span>characters</span></NavLink></li>
+            <li ><NavLink activeClassName={styles.navigation__link_selected} className={styles.navigation__link} to="/sw-react/planets"><span>Planets</span></NavLink></li>
           </ul>
         </div>
 
-        <div className={styles.navigationSection}>
-          <button className={styles.navigationButton} onClick={handleClick} >{currentUserEmail !== '' ? 'logout' : 'login'}</button>
+        <div className={styles.navigation__section}>
+          <Button onClick={handleClick} title={currentUserEmail !== '' ? 'logout' : 'login'} />
         </div>
       </div>
     </nav >

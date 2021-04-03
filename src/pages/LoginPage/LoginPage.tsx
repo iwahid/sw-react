@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { UserModel } from '../../models';
 import { RootState } from '../../store/store';
 import { userLogin, userRegister, FirebaseAuthResponse } from '../../api/services/userService/userService';
+import { BTN_SIZE, Button } from '../../components/UIComponents/Button/Button';
 import styles from './LoginPage.module.css'
 import stormtrooper1 from '../../assets/imagePlaceHolder/Stormtrooper1.png'
 import stormtrooper2 from '../../assets/imagePlaceHolder/Stormtrooper2.png'
@@ -126,8 +127,8 @@ export const LoginPage: React.FC = () => {
             </div>
 
             <div className={styles.formGroup}>
-              <button className={styles.loginButton} onClick={handleSignInForm} type='button'>Sign in</button>
-              <button className={styles.loginButton} onClick={handleSignUpForm} type='button'>Sign up</button>
+              <div><Button onClick={handleSignInForm} title='Sign in' type='button' /></div>
+              <div><Button onClick={handleSignUpForm} size={BTN_SIZE.small} title='Sign up' type='button' /></div>
             </div>
 
             {registrationStatus.type &&
@@ -138,7 +139,7 @@ export const LoginPage: React.FC = () => {
 
           </form>
         </div>
-       
+
         <div className={`${styles.image} ${styles.stormtrooperRight}`}>
           <img alt="stormtrooper" src={stormtrooper2} />
         </div>
