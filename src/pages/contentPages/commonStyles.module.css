@@ -1,4 +1,5 @@
 /* FIXME: переписать на препроцессоры, когда буду адаптировать остальные страницы. Также и Aside */
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -26,6 +27,13 @@
 .mainContent {
   width: 100%;
   overflow-y: auto;
+  padding: 0 50px;
+}
+
+@media (max-width: 992px) {
+  .mainContent {
+    padding: 0 10px;
+  }
 }
 
 /* width */
