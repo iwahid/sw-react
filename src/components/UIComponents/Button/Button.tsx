@@ -1,13 +1,6 @@
 import React from 'react'
 import styles from './Button.module.scss'
 
-export interface ButtonProps {
-  title: string,
-  size?: "small" | 'medium' | 'large',
-  type?: 'button' | 'submit' | 'reset',
-  onClick?: (event: React.FormEvent<HTMLButtonElement>) => void,
-}
-
 interface BtnSizeInterface {
   small: 'small',
   medium: 'medium',
@@ -19,6 +12,14 @@ export const BTN_SIZE: BtnSizeInterface = {
   medium: 'medium',
   large: 'large'
 }
+
+export interface ButtonProps {
+  title: string,
+  size?: "small" | 'medium' | 'large',
+  type?: 'button' | 'submit' | 'reset',
+  onClick?: (event: React.FormEvent<HTMLButtonElement>) => void,
+}
+
 
 export const Button: React.FC<ButtonProps> = (props) => (
   <button
