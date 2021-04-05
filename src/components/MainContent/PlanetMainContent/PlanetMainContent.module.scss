@@ -6,51 +6,120 @@
   @media (orientation: landscape) {
     height: 100%;
   }
-}
 
-.container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 0 50px;
-  box-shadow: inset 0 -210px 48px 8px rgba(34, 36, 38, 1);
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+    box-shadow: inset 0 -210px 48px 8px rgba(34, 36, 38, 1);
 
-  @media (max-width: 920px) {
-    padding: 0 15px;
+    @media (max-width: 920px) {
+      padding: 0 15px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+      padding: 10px 0;
+
+      .planetInfo {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: stretch;
+        align-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+
+        .planetName {
+          position: relative;
+          padding-bottom: 10px;
+          padding-right: 10px;
+
+          &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(126, 130, 134, 0.7);
+            margin: 5px 0;
+          }
+
+          .value {
+            color: var(--main-accent-color);
+            font-size: 32px;
+            padding-bottom: 26px;
+
+            @media (max-width: 920px) {
+              padding-bottom: 18px;
+            }
+            @media (max-width: 580px) {
+              padding-bottom: 2px;
+            }
+          }
+        }
+
+        &__item {
+          width: auto;
+          position: relative;
+          margin: 0;
+          padding: 5px 10px;
+          color: white;
+          font-weight: 200;
+
+          @media (max-width: 580px) {
+            padding: 2px 5px;
+          }
+
+          &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(126, 130, 134, 0.7);
+            margin: 5px 0;
+          }
+
+          p {
+            padding-bottom: 10px;
+
+            @media (max-width: 580px) {
+              padding-bottom: 5px;
+            }
+          }
+
+          .description {
+            color: grey;
+            font-size: 14px;
+
+            @media (max-width: 920px) {
+              font-size: 12px;
+            }
+          }
+
+          .value {
+            color: aliceblue;
+            font-size: 24px;
+            @media (max-width: 920px) {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 100%;
-  padding: 10px 0;
-}
-
-.planetInfo {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: stretch;
-  align-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.planetInfoItem {
-  width: auto;
-  position: relative;
-  margin: 0;
-  padding: 5px 10px;
-  color: white;
-  font-weight: 200;
-
-}
-
-.planetInfoItem:not(:first-child):before {
+.planetInfo__item:not(:first-child):before {
   position: absolute;
   content: "";
   width: 1px;
@@ -59,46 +128,4 @@
   left: 0;
   background-color: rgba(126, 130, 134, 0.7);
   margin: 5px 0;
-}
-
-.planetInfoItem:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(126, 130, 134, 0.7);
-  margin: 5px 0;
-}
-
-.planetInfoItem p {
-  padding: 0 0 10px 0;
-}
-
-.planetInfoItem .description {
-  color: grey;
-  font-size: 14px;
-
-  @media (max-width: 920px) {
-    font-size: 12px;
-  }
-}
-
-.planetInfoItem .value {
-  color: aliceblue;
-  font-size: 24px;
-  @media (max-width: 920px) {
-    font-size: 18px;
-  }
-}
-
-.planetName .value {
-  color: var(--main-accent-color);
-  font-size: 32px;
-  padding-bottom: 26px;
-
-  @media (max-width: 920px) {
-    padding-bottom: 18px;
-  }
 }

@@ -128,7 +128,7 @@ export const LoginPage: React.FC = () => {
 
             <div className={styles.formGroup}>
               <div><Button onClick={handleSignInForm} title='Sign in' type='button' /></div>
-              <div><Button onClick={handleSignUpForm} size={BTN_SIZE.small} title='Sign up' type='button' /></div>
+              <div><Button onClick={handleSignUpForm} title='Sign up' type='button' /></div>
             </div>
 
             {registrationStatus.type &&

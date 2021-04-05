@@ -38,42 +38,42 @@ export const PlanetMainContent: React.FC = () => {
                   <p className={styles.value}>{planet.name}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Climate</p>
                   <p className={styles.value}>{planet.climate}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Diameter</p>
                   <p className={styles.value}>{planet.diameter}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Gravity</p>
                   <p className={styles.value}>{planet.gravity}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Orbital period</p>
                   <p className={styles.value}>{planet.orbitalPeriod}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Population</p>
                   <p className={styles.value}>{planet.population}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Rotation period</p>
                   <p className={styles.value}>{planet.rotationPeriod}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Surface water</p>
                   <p className={styles.value}>{planet.surfaceWater}</p>
                 </div>
 
-                <div className={styles.planetInfoItem}>
+                <div className={styles.planetInfo__item}>
                   <p className={styles.description}>Terrain</p>
                   <p className={styles.value}>{planet.terrain}</p>
                 </div>

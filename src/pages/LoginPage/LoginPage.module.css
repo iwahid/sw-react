@@ -130,6 +130,18 @@
   max-width: 250px;
 }
 
+@media (orientation: landscape) and (max-height: 600px) {
+  .stormtrooperLeft img, .stormtrooperRight img {
+    height: 80vh;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 660px) {
+  .stormtrooperLeft img, .stormtrooperRight img {
+    height: 80vh;
+  }
+}
+
 @media (max-width: 800px) {
   .stormtrooperRight {
     display: none;
