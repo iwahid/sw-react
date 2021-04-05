@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 import { IAsideLink } from '../../models/sharedInterfaces/asideLink';
-import styles from './AsideList.module.css'
+import styles from './AsideList.module.scss'
 
 /** Props interface */
 interface Props {
@@ -20,13 +20,14 @@ export const AsideList: React.FC<Props> = ({ linksList, currentRoute }) => {
         <li key={link.id}>
           <NavLink
             activeClassName={styles.selected}
-            className={`${styles.linkItem} ${styles.linkTitle}`}
+            className={styles.linkItem}
             to={`/sw-react/${currentRoute}/${link.id}`} >
             {link.title}
           </NavLink>
         </li>
-      ))}
-    </ul>
+      ))
+      }
+    </ul >
   )
 
   const loadingMessage = "Loading..."

@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { CharacterModel } from "../../../models";
 import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
-import styles from './PeopleMainContent.module.css'
 import { RootState } from '../../../store/store';
+import styles from './CharacterMainContent.module.scss'
 
 
 /** ID parameter for the selected people */
@@ -27,55 +27,69 @@ export const CharacterMainContent: React.FC = () => {
       {urlParams.id && character && (
         <div className={styles.container}>
           <div className={styles.content}>
-            <div className={styles.characterInfo}>
 
-              <div className={styles.characterName}>
-                <p className={styles.value}>{character.name}</p>
-              </div>
-
-              <div className={styles.characterBirth}>
-                <p className={styles.description}>Birth</p>
-                <p className={styles.value}>{character.birthYear}</p>
-              </div>
-
-              <div className={styles.characterGender}>
-                <p className={styles.description}>Gender</p>
-                <p className={styles.value}>{character.gender}</p>
-              </div>
-
-              <div className={styles.characterHeight}>
-                <p className={styles.description}>Height</p>
-                <p className={styles.value}>{character.height}</p>
-              </div>
-
-              <div className={styles.characterMass}>
-                <p className={styles.description}>Mass</p>
-                <p className={styles.value}>{character.mass}</p>
-              </div>
-
-              <div className={styles.characterEye}>
-                <p className={styles.description}>Eye color</p>
-                <p className={styles.value}>{character.eyeColor}</p>
-              </div>
-
-              <div className={styles.characterHair}>
-                <p className={styles.description}>Hair color</p>
-                <p className={styles.value}>{character.hairColor}</p>
-              </div>
-            </div>
 
             <div className={styles.characterPicture}>
-              <div className={styles.picture}>
-                <div className={styles.shadowPanel} />
+              <div className={styles.characterPicture__wrapper}>
+                {/* <div className={styles.shadowPanel} /> */}
                 {
-                  character && <img alt={character.name} src={character.image ? character.image : imageNotFound} />
+                  character &&
+                  <div
+                    className={styles.characterPicture__image}
+                    style={{
+                      backgroundImage: `url('${character.image ? character.image : imageNotFound}') `,
+                      backgroundSize: 'contain',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'top center',
+                      overflow: 'hidden',
+                    }}
+                  />
                 }
               </div>
             </div>
+
+            <div className={styles.characterInfo}>
+
+              <div className={styles.characterInfo__header}>
+
+                <div className={styles.characterInfo__row}>
+                  <p className={styles.characterInfo__name}>{character.name}</p>
+                </div>
+
+                <div className={styles.characterInfo__row}>
+                  <p className={styles.characterInfo__gender}>{character.gender}</p>
+                  <p className={styles.characterInfo__birth}>Birth: {character.birthYear}</p>
+                </div>
+
+              </div>
+
+              <div className={styles.characterInfo__body}>
+                <div className={styles.characterInfo__row}>
+                  <div className={styles.characterInfo__column}>
+                    <p className={styles.characterInfo__value}>{character.height}</p>
+                    <p className={styles.characterInfo__subTitle}>Height</p>
+                  </div>
+                  <div className={styles.characterInfo__column}>
+                    <p className={styles.characterInfo__value}>{character.mass}</p>
+                    <p className={styles.characterInfo__subTitle}>Mass</p>
+                  </div>
+                  <div className={styles.characterInfo__column}>
+                    <p className={styles.characterInfo__value}>{character.eyeColor}</p>
+                    <p className={styles.characterInfo__subTitle}>Eye color</p>
+                  </div>
+                  <div className={styles.characterInfo__column}>
+                    <p className={styles.characterInfo__value}>{character.hairColor}</p>
+                    <p className={styles.characterInfo__subTitle}>Hair color</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
       )}
     </div>
-
   )
 }

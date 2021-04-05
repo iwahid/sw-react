@@ -10,7 +10,7 @@ import { FilmMainContent } from '../../../components/MainContent/FilmMainContent
 import { FilmModel } from '../../../models/filmModel';
 import { IAsideLink } from '../../../models/sharedInterfaces/asideLink';
 import { RootState } from '../../../store/store';
-import styles from '../commonStyles.module.css';
+import styles from '../commonStyles.module.scss';
 
 /* NOTE: every time I enter the component, I reload all the data from APi, and do not use the data already saved in the store, because it is necessary by the condition of the task */
 
@@ -28,7 +28,6 @@ export const FilmsPage: React.FC = () => {
   /* A media expression to determine the width of the current screen. For conditional rendering */
   const isNarrow = useMedia({ maxWidth: '768px' })
 
-
   const currentRoute = 'films'
 
   useEffect(() => loadAllFilms(), [])
@@ -45,11 +44,7 @@ export const FilmsPage: React.FC = () => {
 
   const linksList: IAsideLink[] = useSelector(selector)
 
-
-  /* Используя хук, определять ширину экрана
-  1. Если узко, смотреть на урл, и если там нет параметра, то прятать основной контент, и рендерить на всю ширину список
-  2. Если узко и есть праметр, то прятать список и показывать основной контент. 
-  В итоге, они просто будут меняться, и отображаться по очереди, в зависимости от того, есть там параметры в урле или нет. Друг другу мешать не будут. Возврат - кнопкой назад */
+  /* NOTE: To adapt the complex layout for mobile devices, I made a stepped rendering of the component. The nav list and the page about ilma are rendered alternately */
 
   return (
     <div className={styles.wrapper}>

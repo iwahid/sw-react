@@ -2,9 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { PlanetModel } from '../../../models';
-import styles from './PlanetMainContent.module.css'
-import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
 import { RootState } from '../../../store/store';
+import imageNotFound from "../../../assets/imagePlaceHolder/Yoda-ImageNotFound.png"
+import styles from './PlanetMainContent.module.scss'
 
 /** ID parameter for the selected planet */
 interface ParamTypes {

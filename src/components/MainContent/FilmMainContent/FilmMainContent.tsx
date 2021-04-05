@@ -11,7 +11,7 @@ import { RelatedDataPanel } from '../RelatedTabs/RelatedDataPanel';
 import { Panel } from '../../TabsSection/Panel';
 import * as dataListService from './dataListService'
 
-import styles from './FilmMainContent.module.css'
+import styles from './FilmMainContent.module.scss'
 import "../../TabsSection/commonStyles.module.css"
 
 /* NOTE: the section on the films page, which displays basic information 
@@ -75,6 +75,7 @@ export const FilmMainContent: React.FC = () => {
   /* FIXME: An unnecessarily complex condition for checking the availability of a film */
   const backgroundImageStyles = {
     backgroundImage: `url('${film ? film.imageBackground : ''}')`,
+    // eslint-disable-next-line no-nested-ternary
     backgroundSize: `${film ? film.imageBackground ? 'cover' : "contain" : ''}`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
@@ -110,13 +111,13 @@ export const FilmMainContent: React.FC = () => {
                   </li>
                 </ul>
                 {/* FIXME: Modify the Option Button for movie editing. Depends on authorization */}
-                {/* <button className={styles.editButton}>Edit</button> */}
+                {/* <button >Edit</button> */}
               </div>
             </div>
           </div>
 
           {/* TODO: Move tabs into a separate component */}
-          <div className={styles.red}>
+          <div className={styles.relativeContent}>
             <Tabs>
               <Panel title="Characters" >
                 {currentFilm.characters

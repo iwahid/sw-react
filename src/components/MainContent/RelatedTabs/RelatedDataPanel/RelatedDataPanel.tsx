@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { ResultList } from '../../FilmMainContent/dataListService';
-import styles from './RelatedDatapanel.module.css'
+import styles from './RelatedDatapanel.module.scss'
 import imageBGPlaceHolder from '../../../../assets/imagePlaceHolder/SW-ImageNotFound_transparent.png'
 
 /** Props interface */
@@ -11,7 +11,7 @@ interface componentProps {
 }
 
 /** Component used in tabs to render individual cards of related character / planet / entity data */
-export const RelatedDataPanel: React.FC<componentProps> = ({urlPath, contentList}) => (
+export const RelatedDataPanel: React.FC<componentProps> = ({ urlPath, contentList }) => (
   <div className={styles.wrapper}>
     {contentList.map((contentItem) =>
       <Link key={contentItem.id} className={styles.item} to={`/sw-react/${urlPath}/${contentItem.id}`} >
