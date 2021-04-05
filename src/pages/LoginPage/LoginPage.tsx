@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { UserModel } from '../../models';
 import { RootState } from '../../store/store';
 import { userLogin, userRegister, FirebaseAuthResponse } from '../../api/services/userService/userService';
-import { BTN_SIZE, Button } from '../../components/UIComponents/Button/Button';
+import { Button } from '../../components/UIComponents/Button/Button';
 import styles from './LoginPage.module.css'
 import stormtrooper1 from '../../assets/imagePlaceHolder/Stormtrooper1.png'
 import stormtrooper2 from '../../assets/imagePlaceHolder/Stormtrooper2.png'
@@ -12,17 +12,17 @@ import stormtrooper2 from '../../assets/imagePlaceHolder/Stormtrooper2.png'
 /* Login / registration form page */
 export const LoginPage: React.FC = () => {
 
-  /* State for dynamically changing titles in the form header. Shows authorization and registration labels alternately */
+  /* State and timers for dynamically changing titles in the form header. Shows authorization and registration labels alternately */
   const [positionX, setPositionX] = useState<number>(0)
 
   useEffect(() => {
-    const timer1 = setInterval(() => setPositionX(-100), 1500)
-    const timer2 = setInterval(() => setPositionX(0), 3000)
+    const timer1 = setInterval(() => setPositionX(-100), 4000)
+    const timer2 = setTimeout(() => setInterval(() => setPositionX(0), 4000), 2000);
 
     /* This will clear Timeout */
     return () => {
       clearTimeout(timer1);
-      clearTimeout(timer2);
+      clearTimeout(timer2)
     };
   }, [])
 
